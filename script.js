@@ -1,91 +1,329 @@
-// Initialize Feather Icons
-feather.replace();
+// Performance optimized initialization
+// Initialize Feather Icons with defer to avoid blocking
+document.addEventListener('DOMContentLoaded', () => {
+  if (typeof feather !== 'undefined') {
+    feather.replace();
+  }
+});
 
-// Profile Image Cycling
+// Optimized debounce function for better INP
+const debounce = (func, wait, immediate) => {
+  let timeout;
+  return function executedFunction(...args) {
+    const later = () => {
+      timeout = null;
+      if (!immediate) func(...args);
+    };
+    const callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow) func(...args);
+  };
+};
+
+// Throttle function for scroll events
+const throttle = (func, limit) => {
+  let inThrottle;
+  return function() {
+    const args = arguments;
+    const context = this;
+    if (!inThrottle) {
+      func.apply(context, args);
+      inThrottle = true;
+      setTimeout(() => inThrottle = false, limit);
+    }
+  }
+};
+
+// Optimized Profile Image Cycling with better performance
 let currentImageIndex = 0;
 const profileImages = [
   '', // SP text (no image)
-  'profile-img/image1.jpg',
-  'profile-img/image2.jpg',
-  'profile-img/image3.jpg'
+  'profile-img/image1.webp',
+  'profile-img/image2.webp',
+  'profile-img/image3.webp'
 ];
 
-function cycleProfileImage() {
+// Preload images for better performance
+const preloadImages = () => {
+  profileImages.forEach(src => {
+    if (src) {
+      const img = new Image();
+      img.src = src;
+    }
+  });
+};
+
+// Debounced version to prevent rapid clicking issues (INP optimization)
+const cycleProfileImage = debounce(() => {
   currentImageIndex = (currentImageIndex + 1) % profileImages.length;
   
   const desktopProfile = document.getElementById('desktop-profile');
   const mobileProfile = document.getElementById('mobile-profile');
   
-  if (currentImageIndex === 0) {
-    // Show SP text
-    if (desktopProfile) {
-      desktopProfile.style.backgroundImage = '';
-      desktopProfile.textContent = 'SP';
-      desktopProfile.classList.remove('has-image');
+  // Use requestAnimationFrame for smooth DOM updates
+  requestAnimationFrame(() => {
+    if (currentImageIndex === 0) {
+      // Show SP text
+      if (desktopProfile) {
+        desktopProfile.style.backgroundImage = '';
+        desktopProfile.textContent = 'SP';
+        desktopProfile.classList.remove('has-image');
+      }
+      if (mobileProfile) {
+        mobileProfile.style.backgroundImage = '';
+        mobileProfile.textContent = 'SP';
+        mobileProfile.classList.remove('has-image');
+      }
+    } else {
+      // Show image
+      const imageUrl = profileImages[currentImageIndex];
+      if (desktopProfile) {
+        desktopProfile.style.backgroundImage = `url('${imageUrl}')`;
+        desktopProfile.textContent = '';
+        desktopProfile.classList.add('has-image');
+      }
+      if (mobileProfile) {
+        mobileProfile.style.backgroundImage = `url('${imageUrl}')`;
+        mobileProfile.textContent = '';
+        mobileProfile.classList.add('has-image');
+      }
     }
-    if (mobileProfile) {
-      mobileProfile.style.backgroundImage = '';
-      mobileProfile.textContent = 'SP';
-      mobileProfile.classList.remove('has-image');
-    }
-  } else {
-    // Show image
-    const imageUrl = profileImages[currentImageIndex];
-    if (desktopProfile) {
-      desktopProfile.style.backgroundImage = `url('${imageUrl}')`;
-      desktopProfile.textContent = '';
-      desktopProfile.classList.add('has-image');
-    }
-    if (mobileProfile) {
-      mobileProfile.style.backgroundImage = `url('${imageUrl}')`;
-      mobileProfile.textContent = '';
-      mobileProfile.classList.add('has-image');
-    }
-  }
-}
+  });
+}, 150, true); // 150ms debounce, immediate first call
 
-// Theme Toggle Functionality
-function toggleTheme() {
+// Optimized Theme Toggle with performance improvements
+const toggleTheme = debounce(() => {
   const body = document.body;
   const themeIcon = document.getElementById('theme-icon');
   const mobileThemeIcon = document.getElementById('mobile-theme-icon');
   const desktopThemeIcon = document.getElementById('desktop-theme-icon');
   
-  body.classList.toggle('dark-mode');
-  
-  if (body.classList.contains('dark-mode')) {
-    if (themeIcon) themeIcon.setAttribute('data-feather', 'moon');
-    if (mobileThemeIcon) mobileThemeIcon.setAttribute('data-feather', 'moon');
-    if (desktopThemeIcon) desktopThemeIcon.setAttribute('data-feather', 'moon');
-    localStorage.setItem('theme', 'dark');
-  } else {
-    if (themeIcon) themeIcon.setAttribute('data-feather', 'sun');
-    if (mobileThemeIcon) mobileThemeIcon.setAttribute('data-feather', 'sun');
-    if (desktopThemeIcon) desktopThemeIcon.setAttribute('data-feather', 'sun');
-    localStorage.setItem('theme', 'light');
+  // Use requestAnimationFrame for smooth transitions
+  requestAnimationFrame(() => {
+    body.classList.toggle('dark-mode');
+    
+    const isDark = body.classList.contains('dark-mode');
+    const iconName = isDark ? 'moon' : 'sun';
+    
+    [themeIcon, mobileThemeIcon, desktopThemeIcon].forEach(icon => {
+      if (icon) icon.setAttribute('data-feather', iconName);
+    });
+    
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    
+    // Defer feather icon replacement to avoid blocking
+    setTimeout(() => {
+      if (typeof feather !== 'undefined') {
+        feather.replace();
+      }
+    }, 0);
+  });
+}, 100, true); // 100ms debounce with immediate first call
+
+// Optimized theme loading
+document.addEventListener('DOMContentLoaded', () => {
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'dark') {
+    document.body.classList.add('dark-mode');
+    
+    // Batch DOM updates
+    requestAnimationFrame(() => {
+      const icons = [
+        document.getElementById('theme-icon'),
+        document.getElementById('mobile-theme-icon'),
+        document.getElementById('desktop-theme-icon')
+      ];
+      
+      icons.forEach(icon => {
+        if (icon) icon.setAttribute('data-feather', 'moon');
+      });
+      
+      // Defer feather replacement
+      setTimeout(() => {
+        if (typeof feather !== 'undefined') {
+          feather.replace();
+        }
+      }, 0);
+    });
   }
   
-  feather.replace();
-}
-
-// Load saved theme
-const savedTheme = localStorage.getItem('theme');
-if (savedTheme === 'dark') {
-  document.body.classList.add('dark-mode');
-  const themeIcon = document.getElementById('theme-icon');
-  const mobileThemeIcon = document.getElementById('mobile-theme-icon');
-  const desktopThemeIcon = document.getElementById('desktop-theme-icon');
+  // Preload profile images
+  preloadImages();
   
-  if (themeIcon) themeIcon.setAttribute('data-feather', 'moon');
-  if (mobileThemeIcon) mobileThemeIcon.setAttribute('data-feather', 'moon');
-  if (desktopThemeIcon) desktopThemeIcon.setAttribute('data-feather', 'moon');
-  feather.replace();
+  // Auto-cycle profile image with longer interval to reduce resource usage
+  setInterval(cycleProfileImage, 7000); // Increased from 5000ms to 7000ms
+});
+
+// Optimized Navbar Scroll Manager with better performance
+class NavbarScrollManager {
+  constructor() {
+    this.navbar = document.querySelector('.navbar');
+    this.lastScrollY = window.scrollY;
+    this.isScrolling = false;
+    this.ticking = false;
+    this.rafId = null;
+    
+    this.init();
+  }
+  
+  init() {
+    // Only apply to desktop navbar
+    if (!this.navbar || window.innerWidth <= 768) return;
+    
+    // Use throttled scroll handler for better INP
+    const throttledScroll = throttle(() => {
+      this.isScrolling = true;
+      this.requestTick();
+    }, 16); // ~60fps throttle
+    
+    window.addEventListener('scroll', throttledScroll, { passive: true });
+    
+    // Optimized resize handler
+    const debouncedResize = debounce(() => {
+      if (window.innerWidth <= 768) {
+        // Reset navbar on mobile
+        if (this.navbar) {
+          this.navbar.style.transform = '';
+          this.navbar.style.transition = '';
+        }
+      }
+    }, 250);
+    
+    window.addEventListener('resize', debouncedResize, { passive: true });
+  }
+  
+  requestTick() {
+    if (!this.ticking) {
+      this.rafId = requestAnimationFrame(() => this.updateNavbar());
+      this.ticking = true;
+    }
+  }
+  
+  updateNavbar() {
+    if (!this.navbar || window.innerWidth <= 768) {
+      this.ticking = false;
+      return;
+    }
+    
+    const currentScrollY = window.scrollY;
+    const scrollThreshold = 100;
+    
+    // Don't hide navbar when at the top
+    if (currentScrollY < scrollThreshold) {
+      this.showNavbar();
+    } else {
+      // Determine scroll direction
+      if (currentScrollY > this.lastScrollY) {
+        this.hideNavbar();
+      } else {
+        this.showNavbar();
+      }
+    }
+    
+    this.lastScrollY = currentScrollY;
+    this.ticking = false;
+    this.isScrolling = false;
+  }
+  
+  hideNavbar() {
+    if (!this.navbar) return;
+    
+    // Use transform for better performance than changing top/left
+    this.navbar.style.transform = 'translateX(-50%) translateY(-130%)';
+    this.navbar.style.transition = 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+  }
+  
+  showNavbar() {
+    if (!this.navbar) return;
+    
+    this.navbar.style.transform = 'translateX(-50%) translateY(0)';
+    this.navbar.style.transition = 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+  }
+  
+  destroy() {
+    if (this.rafId) {
+      cancelAnimationFrame(this.rafId);
+    }
+  }
 }
 
-// Auto-cycle profile image every 5 seconds
-setInterval(cycleProfileImage, 5000);
+// Optimized initialization with priority scheduling
+document.addEventListener('DOMContentLoaded', function() {
+  // High priority: Initialize navbar first (affects LCP)
+  requestAnimationFrame(() => {
+    const navbarScrollManager = new NavbarScrollManager();
+    
+    // Medium priority: Initialize in next frame
+    requestAnimationFrame(() => {
+      // Initialize circular text animation with intersection observer
+      const ellipseElement = document.querySelector(".ellipse svg");
+      if (ellipseElement) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              createAnimation({
+                duration: 20,
+                reversed: true,
+                target: ellipseElement,
+                text: "★ EXPLORE WORKS ★ EXPLORE WORKS  ",
+                textProperties: { 
+                  fontSize: /iPhone/.test(navigator.userAgent) ? "14px" : "13px",
+                  letterSpacing: "7px",
+                  dominantBaseline: "middle",
+                  textAnchor: "start"
+                }
+              });
+              observer.disconnect(); // Run only once
+            }
+          });
+        }, { threshold: 0.1 });
+        
+        observer.observe(ellipseElement);
+      }
+      
+      // Low priority: Initialize heavy animations after user interaction or idle
+      const initHeavyAnimations = () => {
+        // Text on Tread Animation
+        initTextOnTread();
+        
+        // Animated Grid
+        initAnimatedGrid();
+        
+        // Terminal animations with delay
+        setTimeout(() => {
+          const macTerminal = new MacTerminalAnimator();
+          macTerminal.start(500);
+          
+          const todoList = new TodoListAnimator();
+          todoList.startTodoAnimation();
+          
+          const leftTerminal = new TerminalAnimator('left', terminalCommands.left);
+          const rightTerminal = new TerminalAnimator('right', terminalCommands.right);
 
-// Circular Text Animation
+          leftTerminal.start(1000);
+          rightTerminal.start(2000);
+        }, 1000);
+        
+        // Project preview and parallax managers
+        setTimeout(() => {
+          const previewManager = new ProjectPreviewManager();
+          const darkPortfolioManager = new DarkPortfolioManager();
+          const parallaxManager = new ParallaxManager();
+        }, 2000);
+      };
+      
+      // Use requestIdleCallback if available, otherwise setTimeout
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(initHeavyAnimations, { timeout: 3000 });
+      } else {
+        setTimeout(initHeavyAnimations, 2000);
+      }
+    });
+  });
+});
+
+// Optimized GSAP animation with lazy loading
 const createAnimation = ({
   duration = 21,
   reversed = false,
@@ -93,6 +331,12 @@ const createAnimation = ({
   text,
   textProperties = undefined
 }) => {
+  // Only create animation if GSAP is loaded
+  if (typeof gsap === 'undefined') {
+    console.warn('GSAP not loaded, skipping animation');
+    return;
+  }
+  
   const pathId = `path-${Math.floor(Math.random() * 900000) + 100000}`;
   const props = { duration, ease: "none", repeat: -1 };
 
@@ -126,24 +370,7 @@ const createAnimation = ({
   );
 };
 
-// Initialize circular text animation when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
-  const ellipseElement = document.querySelector(".ellipse svg");
-  if (ellipseElement) {
-    createAnimation({
-      duration: 20,
-      reversed: true,
-      target: ellipseElement,
-      text: "★ EXPLORE WORKS ★ EXPLORE WORKS  ",
-      textProperties: { 
-        fontSize: /iPhone/.test(navigator.userAgent) ? "14px" : "13px",
-        letterSpacing: "7px",
-        dominantBaseline: "middle",
-        textAnchor: "start"
-      }
-    });
-  }
-});
+
 
 // Developer Todo List Animation
 const todoTasks = [
@@ -558,20 +785,641 @@ class TerminalAnimator {
   }
 }
 
-// Start terminal animations
-document.addEventListener('DOMContentLoaded', function() {
-  // Initialize Mac terminal animation
-  const macTerminal = new MacTerminalAnimator();
-  macTerminal.start(500);
-  
-  // Initialize todo list animation
-  const todoList = new TodoListAnimator();
-  todoList.startTodoAnimation();
-  
-  // Initialize left and right terminals only
-  const leftTerminal = new TerminalAnimator('left', terminalCommands.left);
-  const rightTerminal = new TerminalAnimator('right', terminalCommands.right);
 
-  leftTerminal.start(1000);
-  rightTerminal.start(2000);
-});
+
+// Project Preview Cards Functionality
+class ProjectPreviewManager {
+  constructor() {
+    this.isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    this.currentPreview = null;
+    this.mousePosition = { x: 0, y: 0 };
+    this.targetPosition = { x: 0, y: 0 };
+    this.animationId = null;
+    
+    this.init();
+  }
+  
+  init() {
+    const projectItems = document.querySelectorAll('.project-item');
+    
+    projectItems.forEach(item => {
+      const preview = item.querySelector('.project-preview');
+      
+      if (this.isTouch) {
+        // Mobile touch events
+        item.addEventListener('touchstart', (e) => {
+          e.preventDefault();
+          this.showPreview(preview);
+        });
+        
+        item.addEventListener('touchend', (e) => {
+          e.preventDefault();
+          this.hidePreview(preview);
+        });
+      } else {
+        // Desktop mouse events
+        item.addEventListener('mouseenter', () => {
+          this.showPreview(preview);
+          this.startFollowMouse(preview);
+        });
+        
+        item.addEventListener('mouseleave', () => {
+          this.hidePreview(preview);
+          this.stopFollowMouse();
+        });
+        
+        item.addEventListener('mousemove', (e) => {
+          this.updateMousePosition(e);
+        });
+      }
+    });
+  }
+  
+  showPreview(preview) {
+    if (this.currentPreview && this.currentPreview !== preview) {
+      this.hidePreview(this.currentPreview);
+    }
+    
+    this.currentPreview = preview;
+    
+    // Add a small delay for better UX
+    setTimeout(() => {
+      preview.classList.add('show');
+    }, 100);
+  }
+  
+  hidePreview(preview) {
+    preview.classList.remove('show');
+    
+    if (this.currentPreview === preview) {
+      this.currentPreview = null;
+    }
+  }
+  
+  updateMousePosition(e) {
+    this.targetPosition.x = e.clientX;
+    this.targetPosition.y = e.clientY;
+  }
+  
+  startFollowMouse(preview) {
+    if (this.isTouch) return;
+    
+    const animate = () => {
+      if (!this.currentPreview || this.currentPreview !== preview) {
+        return;
+      }
+      
+      // Smooth mouse following with slight delay
+      const ease = 0.12;
+      this.mousePosition.x += (this.targetPosition.x - this.mousePosition.x) * ease;
+      this.mousePosition.y += (this.targetPosition.y - this.mousePosition.y) * ease;
+      
+      // Position the preview card with offset to avoid cursor overlap
+      const offsetX = 25;
+      const offsetY = -125;
+      
+      // Keep card within viewport bounds
+      const cardWidth = 350;
+      const cardHeight = 250;
+      const viewportWidth = window.innerWidth;
+      const viewportHeight = window.innerHeight;
+      
+      let x = this.mousePosition.x + offsetX;
+      let y = this.mousePosition.y + offsetY;
+      
+      // Adjust if card would go off-screen
+      if (x + cardWidth > viewportWidth - 20) {
+        x = this.mousePosition.x - cardWidth - offsetX;
+      }
+      if (x < 20) {
+        x = 20;
+      }
+      if (y < 20) {
+        y = this.mousePosition.y + offsetY + 150;
+      }
+      if (y + cardHeight > viewportHeight - 20) {
+        y = viewportHeight - cardHeight - 20;
+      }
+      
+      preview.style.left = `${x}px`;
+      preview.style.top = `${y}px`;
+      
+      this.animationId = requestAnimationFrame(animate);
+    };
+    
+    this.animationId = requestAnimationFrame(animate);
+  }
+  
+  stopFollowMouse() {
+    if (this.animationId) {
+      cancelAnimationFrame(this.animationId);
+      this.animationId = null;
+    }
+  }
+}
+
+
+
+// Optimized Parallax Scrolling Effect for Hero Section
+class ParallaxManager {
+  constructor() {
+    this.heroSection = document.querySelector('.hero-section');
+    this.terminals = {
+      left: document.querySelector('.terminal-left'),
+      right: document.querySelector('.terminal-right'),
+      mac: document.querySelector('.mac-terminal')
+    };
+    this.floatingIcons = document.querySelectorAll('.tech-icon');
+    this.heroContent = document.querySelector('.hero-content');
+    this.todoList = document.querySelector('.dev-todo-list');
+    this.mobileTerminals = {
+      terminal1: document.querySelector('.mobile-terminal-1'),
+      terminal2: document.querySelector('.mobile-terminal-2')
+    };
+    
+    this.isScrolling = false;
+    this.ticking = false;
+    this.rafId = null;
+    
+    this.init();
+  }
+  
+  init() {
+    // Check if we're on mobile or desktop
+    this.isMobile = window.innerWidth <= 768;
+    
+    // Use throttled scroll event listener for better performance
+    const throttledScroll = throttle(() => {
+      this.isScrolling = true;
+      this.requestTick();
+    }, 16); // ~60fps
+    
+    window.addEventListener('scroll', throttledScroll, { passive: true });
+    
+    // Optimized resize handler
+    const debouncedResize = debounce(() => {
+      this.isMobile = window.innerWidth <= 768;
+    }, 250);
+    
+    window.addEventListener('resize', debouncedResize, { passive: true });
+    
+    // Set initial positions
+    this.updateElements();
+  }
+  
+  requestTick() {
+    if (!this.ticking) {
+      this.rafId = requestAnimationFrame(() => this.updateElements());
+      this.ticking = true;
+    }
+  }
+  
+  updateElements() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const heroHeight = this.heroSection ? this.heroSection.offsetHeight : 0;
+    
+    // Only apply parallax when hero section is visible
+    if (scrollTop < heroHeight) {
+      // Use transform3d for hardware acceleration
+      const terminalSpeed = 0.8;
+      const iconSpeed = 0.5;
+      const contentSpeed = 0.3;
+      const todoSpeed = 0.6;
+      
+      const terminalTransform = scrollTop * terminalSpeed;
+      const iconTransform = scrollTop * iconSpeed;
+      const contentTransform = scrollTop * contentSpeed;
+      const todoTransform = scrollTop * todoSpeed;
+      
+      if (!this.isMobile) {
+        // Desktop parallax effects with transform3d
+        if (this.terminals.left) {
+          this.terminals.left.style.transform = `translate3d(0, ${terminalTransform}px, 0)`;
+        }
+        if (this.terminals.right) {
+          this.terminals.right.style.transform = `translate3d(0, ${terminalTransform}px, 0)`;
+        }
+        if (this.terminals.mac) {
+          this.terminals.mac.style.transform = `translate3d(0, ${terminalTransform}px, 0)`;
+        }
+        
+        if (this.todoList) {
+          this.todoList.style.transform = `translate3d(0, ${todoTransform}px, 0)`;
+        }
+        
+        // Use transform3d for better performance
+        this.floatingIcons.forEach((icon, index) => {
+          const variation = (index % 3) * 0.1;
+          const iconTransformWithVariation = iconTransform + (scrollTop * variation);
+          icon.style.transform = `translate3d(0, ${iconTransformWithVariation}px, 0)`;
+        });
+        
+        if (this.heroContent) {
+          this.heroContent.style.transform = `translate3d(0, -${contentTransform}px, 0)`;
+        }
+      } else {
+        // Mobile parallax effects (more subtle)
+        const mobileTerminalSpeed = 0.4;
+        const mobileIconSpeed = 0.25;
+        const mobileContentSpeed = 0.15;
+        
+        const mobileTerminalTransform = scrollTop * mobileTerminalSpeed;
+        const mobileIconTransform = scrollTop * mobileIconSpeed;
+        const mobileContentTransform = scrollTop * mobileContentSpeed;
+        
+        if (this.mobileTerminals.terminal1) {
+          this.mobileTerminals.terminal1.style.transform = `translate3d(0, ${mobileTerminalTransform}px, 0)`;
+        }
+        if (this.mobileTerminals.terminal2) {
+          this.mobileTerminals.terminal2.style.transform = `translate3d(0, ${mobileTerminalTransform}px, 0)`;
+        }
+        
+        this.floatingIcons.forEach((icon, index) => {
+          const variation = (index % 2) * 0.05;
+          const iconTransformWithVariation = mobileIconTransform + (scrollTop * variation);
+          icon.style.transform = `translate3d(0, ${iconTransformWithVariation}px, 0)`;
+        });
+        
+        if (this.heroContent) {
+          this.heroContent.style.transform = `translate3d(0, -${mobileContentTransform}px, 0)`;
+        }
+        
+        if (this.todoList) {
+          this.todoList.style.transform = `translate3d(0, ${mobileTerminalTransform * 0.7}px, 0)`;
+        }
+      }
+    } else {
+      // Reset transforms when hero section is out of view
+      this.resetTransforms();
+    }
+    
+    this.ticking = false;
+    this.isScrolling = false;
+  }
+  
+  resetTransforms() {
+    // Reset all transforms when scrolled past hero section
+    const elements = [
+      this.terminals.left,
+      this.terminals.right, 
+      this.terminals.mac,
+      this.todoList,
+      this.heroContent,
+      this.mobileTerminals.terminal1,
+      this.mobileTerminals.terminal2
+    ];
+    
+    elements.forEach(el => {
+      if (el) el.style.transform = '';
+    });
+    
+    this.floatingIcons.forEach(icon => {
+      icon.style.transform = '';
+    });
+  }
+  
+  destroy() {
+    if (this.rafId) {
+      cancelAnimationFrame(this.rafId);
+    }
+  }
+}
+
+
+
+// Dark Portfolio Floating Preview Manager
+class DarkPortfolioManager {
+  constructor() {
+    this.isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    this.currentPreview = null;
+    this.currentProjectItem = null;
+    this.projectsSection = document.querySelector('.dark-portfolio-section');
+    this.mousePosition = { x: 0, y: 0 };
+    this.targetPosition = { x: 0, y: 0 };
+    this.animationId = null;
+    this.isMouseInProject = false;
+    this.hideTimeout = null;
+    this.init();
+  }
+  
+  init() {
+    // Only initialize on desktop (non-touch devices)
+    if (this.isTouch) return;
+    
+    const projectItems = document.querySelectorAll('.dark-portfolio-section .project-item');
+    
+    // Store all project items for global management
+    this.projectItems = projectItems;
+    
+    projectItems.forEach((item, index) => {
+      const preview = item.querySelector('.floating-preview');
+      
+      if (!preview) return;
+      
+      // Add project link data attribute for future use
+      item.setAttribute('data-project-link', `#project-${index + 1}`);
+      
+      // Mouse enter project
+      item.addEventListener('mouseenter', (e) => {
+        // Immediately hide all other previews for instant switching
+        this.hideAllPreviews();
+        
+        this.isMouseInProject = true;
+        this.currentProjectItem = item;
+        this.updateTargetPosition(e);
+        this.showPreview(preview, item);
+        this.startFollowMouse(preview);
+      });
+      
+      // Mouse leave project
+      item.addEventListener('mouseleave', (e) => {
+        this.isMouseInProject = false;
+        this.currentProjectItem = null;
+        // Immediately hide preview when leaving project area
+        this.hidePreview(preview, true);
+        this.stopFollowMouse();
+      });
+      
+      // Mouse move within project
+      item.addEventListener('mousemove', (e) => {
+        if (this.isMouseInProject) {
+          this.updateTargetPosition(e);
+        }
+      });
+      
+      // Preview hover events - no longer needed since we hide immediately
+      // The preview will be hidden instantly when leaving project area
+      
+      // Allow default link behavior for floating preview
+      // The preview is already wrapped in an <a> tag, so no custom click handling needed
+      
+      // Preview no longer needs click handlers since it uses pointer-events: none
+      // Clicks will naturally pass through to underlying elements
+    });
+  }
+  
+  updateTargetPosition(e) {
+    this.targetPosition.x = e.clientX;
+    this.targetPosition.y = e.clientY;
+    
+    // Initialize mouse position for smooth start
+    if (this.mousePosition.x === 0 && this.mousePosition.y === 0) {
+      this.mousePosition.x = e.clientX;
+      this.mousePosition.y = e.clientY;
+    }
+  }
+  
+  showPreview(preview, projectItem) {
+    // Hide any currently visible preview instantly
+    if (this.currentPreview && this.currentPreview !== preview) {
+      this.hidePreview(this.currentPreview, true);
+    }
+    
+    this.currentPreview = preview;
+    
+    // Show preview immediately for instant response
+    preview.classList.add('show');
+  }
+  
+  scheduleHidePreview(preview) {
+    this.hideTimeout = setTimeout(() => {
+      this.hidePreview(preview);
+    }, 300); // Increased delay to allow clicking
+  }
+  
+  clearHideTimeout() {
+    if (this.hideTimeout) {
+      clearTimeout(this.hideTimeout);
+      this.hideTimeout = null;
+    }
+  }
+  
+  hideAllPreviews() {
+    // Hide all previews instantly
+    if (this.projectItems) {
+      this.projectItems.forEach(item => {
+        const preview = item.querySelector('.floating-preview');
+        if (preview) {
+          preview.classList.remove('show');
+        }
+      });
+    }
+    this.currentPreview = null;
+    this.clearHideTimeout();
+  }
+
+  hidePreview(preview, instant = false) {
+    this.clearHideTimeout();
+    
+    if (instant) {
+      preview.classList.remove('show');
+    } else {
+      preview.classList.remove('show');
+    }
+    
+    if (this.currentPreview === preview) {
+      this.currentPreview = null;
+    }
+  }
+  
+  startFollowMouse(preview) {
+    const animate = () => {
+      if (!this.currentPreview || this.currentPreview !== preview) {
+        return;
+      }
+      
+      // Smooth following with moderate lag
+      const ease = 0.08;
+      this.mousePosition.x += (this.targetPosition.x - this.mousePosition.x) * ease;
+      this.mousePosition.y += (this.targetPosition.y - this.mousePosition.y) * ease;
+      
+      // Center the preview near the cursor
+      const previewWidth = 320;
+      const previewHeight = 200;
+      
+      // Position slightly offset from cursor
+      let x = this.mousePosition.x - (previewWidth / 2) + 20;
+      let y = this.mousePosition.y - previewHeight - 20;
+      
+      // Keep preview within viewport
+      const viewportWidth = window.innerWidth;
+      const viewportHeight = window.innerHeight;
+      const margin = 20;
+      
+      // Horizontal bounds
+      if (x + previewWidth > viewportWidth - margin) {
+        x = viewportWidth - previewWidth - margin;
+      }
+      if (x < margin) {
+        x = margin;
+      }
+      
+      // Vertical bounds
+      if (y < margin) {
+        y = this.mousePosition.y + 20; // Show below cursor if no space above
+      }
+      if (y + previewHeight > viewportHeight - margin) {
+        y = viewportHeight - previewHeight - margin;
+      }
+      
+      // Apply position
+      preview.style.left = `${x}px`;
+      preview.style.top = `${y}px`;
+      
+      this.animationId = requestAnimationFrame(animate);
+    };
+    
+    this.animationId = requestAnimationFrame(animate);
+  }
+  
+  stopFollowMouse() {
+    if (this.animationId) {
+      cancelAnimationFrame(this.animationId);
+      this.animationId = null;
+    }
+  }
+}
+
+
+
+// Text on Tread Animation Implementation
+function initTextOnTread() {
+  const root = document.getElementById('text-tread-root');
+  if (!root) return;
+  
+  const text = "EAT CODE SLEEP REPEAT";
+  const duration = 8000; // in ms
+  const treadLength = 44.57;
+  const treadFragments = 80;
+  const treadFragmentWidth = treadLength / treadFragments;
+  
+  // Create the main container
+  const totContainer = document.createElement('div');
+  totContainer.className = 'tot';
+  
+  // Create front layer
+  const frontLayer = createTreadLayer(text, treadFragments, treadFragmentWidth, duration, false);
+  
+  // Create back layer
+  const backLayer = createTreadLayer(text, treadFragments, treadFragmentWidth, duration, true);
+  backLayer.setAttribute('aria-hidden', 'true');
+  
+  totContainer.appendChild(frontLayer);
+  totContainer.appendChild(backLayer);
+  root.appendChild(totContainer);
+}
+
+function createTreadLayer(text, treadFragments, treadFragmentWidth, duration, isBack) {
+  const layer = document.createElement('div');
+  layer.className = 'tot__layer';
+  layer.textContent = text;
+  
+  // Create tread fragments
+  for (let f = 0; f < treadFragments; f++) {
+    const percent = f / treadFragments;
+    const moveX = f * treadFragmentWidth;
+    
+    const delay = isBack 
+      ? -duration + (percent * duration)
+      : -duration + ((percent - 0.5) * duration);
+    
+    const finalMoveX = isBack ? -moveX : moveX;
+    
+    const treadFragment = createTreadFragment(text, duration, delay, finalMoveX, treadFragmentWidth);
+    layer.appendChild(treadFragment);
+  }
+  
+  return layer;
+}
+
+function createTreadFragment(text, duration, delay, moveX, width) {
+  const tread = document.createElement('div');
+  tread.className = 'tot__tread';
+  tread.style.animationDuration = `${duration}ms`;
+  tread.style.animationDelay = `${delay}ms`;
+  tread.style.width = `calc(${width}rem + 1px)`;
+  
+  const window = document.createElement('div');
+  window.className = 'tot__tread-window';
+  window.setAttribute('aria-hidden', 'true');
+  window.setAttribute('data-text', text);
+  window.style.transform = `translateX(${moveX}rem)`;
+  
+  tread.appendChild(window);
+  return tread;
+}
+
+// Animated Grid Implementation
+function initAnimatedGrid() {
+  const svg = document.querySelector('.animated-grid-cell svg');
+  if (!svg) return;
+  
+  const pts = [];
+  const boxes = [];
+  const props = {
+    width: 22,
+    height: 29,
+    size: 4.2
+  };
+
+  // Setup grid points
+  for (let x = 0, i = 0; x < props.width; x++) {
+    for (let y = 0; y < props.height; y++) {
+      if (i % props.height < props.height - 1 && i < props.width * props.height - props.height) {
+        const p = document.createElementNS("http://www.w3.org/2000/svg", "path");
+        svg.appendChild(p);
+        boxes[i] = p;
+        
+        // Set fill color
+        const fillColor = y % Math.ceil(props.size / 2) ? '#36c' : 'skyblue';
+        p.setAttribute('fill', fillColor);
+      }
+      pts[i] = { i: i, x: x * props.size, y: y * props.size };
+      pts[i].baseX = pts[i].x;
+      pts[i].baseY = pts[i].y;
+      i++;
+    }
+  }
+
+  // Set initial positions
+  pts.forEach((pt, i) => {
+    pt.x = pt.baseX + (pt.baseY % (props.size * 2) * 2);
+  });
+
+  // Animation function
+  function animateGrid() {
+    const duration = 2000; // 2 seconds
+    const staggerAmount = 5000; // 5 seconds total stagger
+    
+    pts.forEach((pt, i) => {
+      const staggerDelay = (i / pts.length) * staggerAmount;
+      const totalDuration = duration + staggerAmount;
+      
+      // Create oscillating motion
+      setInterval(() => {
+        const time = (Date.now() + staggerDelay) / 1000;
+        const oscillation = Math.sin(time * Math.PI / duration) * props.size * 2;
+        pt.y = pt.baseY - oscillation;
+        drawBoxes();
+      }, 16); // ~60fps
+    });
+  }
+
+  function drawBoxes() {
+    boxes.forEach((b, i) => {
+      if (b && pts[i] && pts[i + 1] && pts[i + 1 + props.height] && pts[i + props.height]) {
+        let pathData = 
+          ' M' + pts[i].x + ',' + pts[i].y +
+          ' L' + pts[i + 1].x + ',' + pts[i + 1].y +
+          ' L' + pts[i + 1 + props.height].x + ',' + pts[i + 1 + props.height].y +
+          ' L' + pts[i + props.height].x + ',' + pts[i + props.height].y + 'z';
+        b.setAttribute('d', pathData);
+      }
+    });
+  }
+
+  // Start animation
+  drawBoxes();
+  animateGrid();
+}
+

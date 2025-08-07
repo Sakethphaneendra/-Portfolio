@@ -1,11 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
 
+/* Smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Open Sans', sans-serif;
   margin: 0;
   padding: 0;
   padding-top: 80px; /* Space for desktop navbar */
 }
+
 
 
 /* Desktop Navigation - Solid Premium Design */
@@ -27,6 +33,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: transform 0.3s ease-in-out;
+    will-change: transform;
   }
 
   .navbar__main {
@@ -472,6 +480,8 @@ body.dark-mode {
     background: #1e293b;
     border-color: rgba(255, 255, 255, 0.1);
     box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+    will-change: transform;
   }
 
   body.dark-mode .navbar__link {
@@ -686,7 +696,7 @@ body.dark-mode .center-arrow:hover {
 
 /* Small Mac Terminal Above Title */
 .mac-terminal {
-  position: fixed;
+  position: absolute;
   top: 25%;
   left: 8%;
   background: rgba(30, 34, 42, 0.95);
@@ -862,7 +872,7 @@ body.dark-mode .mac-terminal-line.output {
 
 /* Floating Tech Icons */
 .floating-tech-icons {
-  position: fixed;
+  position: absolute;
   width: 100%;
   height: 100%;
   pointer-events: none;
@@ -1210,7 +1220,7 @@ body.dark-mode .tech-icon {
 
 /* Developer Todo List */
 .dev-todo-list {
-  position: fixed;
+  position: absolute;
   top: 15%;
   right: 2%;
   width: 280px;
@@ -1467,7 +1477,7 @@ body.dark-mode .tech-icon {
 
 /* Mac-Style Terminal Layout - Partially Visible */
 .code-terminal {
-  position: fixed;
+  position: absolute;
   transform: translate(-50%,-50%);
   background: rgba(20, 25, 35, 0.95);
   border-radius: 12px;
@@ -1667,7 +1677,7 @@ body.dark-mode .mac-terminal {
   /* Show only one mobile terminal at top */
   .mobile-terminal-1 {
     display: flex !important;
-    position: fixed;
+    position: absolute;
     top: 15%;
     left: 50%;
     transform: translateX(-50%) rotate(-2deg);
@@ -1747,6 +1757,590 @@ body.dark-mode .mac-terminal {
     min-width: 130px;
     max-width: 160px;
   }
+}
+
+/* Parallax Smooth Transitions */
+.code-terminal,
+.mac-terminal,
+.dev-todo-list,
+.floating-tech-icons,
+.tech-icon,
+.hero-content,
+.mobile-terminal-1 {
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+/* Modern Dark Portfolio Section */
+.dark-portfolio-section {
+  padding: 6rem 0;
+  background: #000000;
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* Remove stars background */
+
+.portfolio-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.portfolio-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #444444;
+  margin-bottom: 1rem;
+  letter-spacing: -1px;
+}
+
+.title-underline {
+  display: none;
+}
+
+.projects-list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.project-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 2rem 3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+}
+
+.project-link {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+.project-link:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+.project-item:last-child {
+  border-bottom: none;
+}
+
+.project-item:hover {
+  padding-left: 1rem;
+  border-radius: 15px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.project-link:hover {
+  transform: translateX(10px);
+}
+
+.project-number {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #666;
+  margin-right: 2rem;
+  min-width: 40px;
+  transition: all 0.3s ease;
+  font-family: 'Monaco', 'Menlo', monospace;
+}
+
+.project-item:hover .project-number {
+  color: #ffffff;
+}
+
+.project-content {
+  flex: 1;
+}
+
+.project-name {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  transition: all 0.3s ease;
+  letter-spacing: -0.5px;
+}
+
+.project-item:hover .project-name {
+  color: #ffffff;
+  transform: none;
+}
+
+.project-link:hover .project-name {
+  transform: translateX(5px);
+}
+
+.project-tech {
+  font-size: 0.9rem;
+  color: #888;
+  font-weight: 400;
+  margin: 0;
+  transition: all 0.3s ease;
+  font-family: 'Monaco', 'Menlo', monospace;
+}
+
+.project-item:hover .project-tech {
+  color: #aaa;
+}
+
+.project-arrow {
+  font-size: 1.5rem;
+  color: #666;
+  transition: all 0.3s ease;
+  margin-left: 1rem;
+  transform: translateX(-20px);
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-item:hover .project-arrow {
+  color: #ffffff;
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* Simple Floating Preview Styles */
+.floating-preview {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 320px;
+  height: 200px;
+  z-index: 10000;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+  will-change: transform, opacity;
+}
+
+.floating-preview.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Dark mode adaptation for floating preview */
+body.dark-mode .preview-card {
+  background: #2a2a2a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .image-overlay {
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    transparent 70%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
+}
+
+.preview-card {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
+}
+
+.preview-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.preview-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    transparent 70%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
+}
+
+.preview-card:hover {
+  transform: scale(1.02);
+  box-shadow: 
+    0 25px 50px rgba(0, 0, 0, 0.5),
+    0 8px 20px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+.preview-card:active {
+  transform: scale(0.98);
+}
+
+.preview-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.preview-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: brightness(0.9) contrast(1.1);
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.1) 50%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+  transition: opacity 0.3s ease;
+}
+
+/* Preview info styles removed - showing only images */
+
+/* Removed Glow Effects */
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dark-portfolio-section {
+    padding: 4rem 0;
+  }
+  
+  .portfolio-container {
+    padding: 0 1rem;
+  }
+  
+  .portfolio-title {
+    font-size: 2.5rem;
+  }
+  
+  .project-item {
+    padding: 2rem 0;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+  
+  .project-number {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+  
+  .project-name {
+    font-size: 1.5rem;
+  }
+  
+  .project-arrow {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    font-size: 1.2rem;
+    color: #666;
+    transform: translateY(-50%);
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .project-item:hover .project-arrow {
+    color: #ffffff;
+    transform: translateY(-50%) translateX(5px);
+  }
+  
+  .floating-preview {
+    display: none; /* Hide on mobile for better performance */
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio-title {
+    font-size: 2rem;
+    letter-spacing: -1px;
+  }
+  
+  .project-name {
+    font-size: 1.3rem;
+  }
+  
+  .project-tech {
+    font-size: 0.8rem;
+  }
+  
+  /* Disable floating preview on mobile/touch devices */
+  .floating-preview {
+    display: none !important;
+  }
+}
+
+/* Skills Grid Section Styles */
+.skills-grid-section {
+  min-height: 100vh;
+  background: #000000;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 40px;
+}
+
+.skills-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.skills-grid-container {
+  width: 100%;
+  position: absolute;
+  z-index: 10;
+}
+
+.skills-pre-grid {
+  grid-column-gap: 2px;
+  grid-row-gap: 2px;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(6, 1fr);
+  grid-auto-columns: 1fr;
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  position: relative;
+}
+
+.skill-grid-cell {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0;
+  background-color: #000000;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Cell Number Styling */
+.cell-number {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.8);
+  z-index: 20;
+  pointer-events: none;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 4px 8px;
+  border-radius: 12px;
+  backdrop-filter: blur(4px);
+}
+
+.skill-grid-cell:hover .cell-number {
+  color: rgba(99, 102, 241, 0.9);
+  background: rgba(99, 102, 241, 0.2);
+  transform: scale(1.05);
+}
+
+.skill-grid-cell.reveal {
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Different sized cells */
+.skill-grid-cell.large {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.skill-grid-cell.wide {
+  grid-column: span 2;
+}
+
+.skill-grid-cell.extra-wide {
+  grid-column: span 3;
+}
+
+.skill-grid-cell.tall {
+  grid-row: span 2;
+}
+
+/* Grid Lines for Cursor Effect */
+.skills-grid-lines {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none;
+}
+
+.skills-grid-lines_cursor-position {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-style: preserve-3d;
+  will-change: transform;
+  pointer-events: none;
+}
+
+.skills-grid-lines_cursor {
+  aspect-ratio: 1;
+  width: 400px;
+  border-radius: 50%;
+  background-image: radial-gradient(
+    circle farthest-corner at 50% 50%,
+    rgba(99, 102, 241, 0.3) 10%,
+    transparent 70%
+  );
+  position: absolute;
+  top: -200px;
+  left: -200px;
+  opacity: 1;
+  filter: blur(70px);
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* Animations */
+@keyframes skillContentFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .skills-pre-grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
+  
+  .skill-grid-cell.large {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-pre-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+  }
+  
+  .skill-grid-cell.large {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+  
+  .skill-grid-cell.wide {
+    grid-column: span 2;
+  }
+  
+  .skill-grid-cell.tall {
+    grid-row: span 1;
+  }
+  
+  /* Medium cell numbers for tablet */
+  .cell-number {
+    font-size: 1rem;
+    top: 8px;
+    right: 8px;
+    padding: 3px 6px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .skills-pre-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    gap: 1px;
+  }
+  
+  .skill-grid-cell {
+    min-height: 120px;
+  }
+  
+  .skill-grid-cell.large,
+  .skill-grid-cell.wide,
+  .skill-grid-cell.tall {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+  
+  /* Smaller cell numbers for mobile */
+  .cell-number {
+    font-size: 0.8rem;
+    top: 6px;
+    right: 6px;
+    padding: 2px 4px;
+  }
+}
+
+/* Special reveal cell styling */
+.skill-grid-cell.reveal:hover {
+  background-color: rgba(187, 187, 187, 0.1);
 }
 
 
