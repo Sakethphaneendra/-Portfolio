@@ -20,7 +20,7 @@ body {
     position: fixed;
     top: 1.5rem;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) translateY(0);
     background: #ffffff;
     border-radius: 50px;
     padding: 0.75rem 1.5rem;
@@ -33,8 +33,17 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     will-change: transform;
+  }
+
+  /* Navbar scroll states */
+  .navbar.navbar--hidden {
+    transform: translateX(-50%) translateY(-100%);
+  }
+
+  .navbar.navbar--visible {
+    transform: translateX(-50%) translateY(0);
   }
 
   .navbar__main {
@@ -2123,7 +2132,7 @@ body.dark-mode .image-overlay {
 /* Skills Grid Section Styles */
 .skills-grid-section {
   min-height: 100vh;
-  /* background: #000000; */
+  background: #000000;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -2140,6 +2149,7 @@ body.dark-mode .image-overlay {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   margin: 10% 0% 10% 0%;
 }
 
@@ -2151,9 +2161,9 @@ body.dark-mode .image-overlay {
 }
 
 .skills-pre-grid {
-  grid-column-gap: 5px;
-  margin: 10px;
-  grid-row-gap: 5px;
+  grid-column-gap: 15px;
+  margin: 0px;
+  grid-row-gap: 15px;
   grid-template-rows: repeat(3, 1fr);
   grid-template-columns: repeat(6, 1fr);
   grid-auto-columns: 1fr;
@@ -2281,6 +2291,8 @@ body.dark-mode .image-overlay {
   .skills-pre-grid {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 12px;
+    grid-row-gap: 12px;
   }
   
   .skill-grid-cell.large {
@@ -2293,6 +2305,8 @@ body.dark-mode .image-overlay {
   .skills-pre-grid {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(6, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
   }
   
   .skill-grid-cell.large {
@@ -2322,7 +2336,7 @@ body.dark-mode .image-overlay {
   .skills-pre-grid {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(8, 1fr);
-    gap: 5px;
+    gap: 8px;
   }
   
   .skill-grid-cell {

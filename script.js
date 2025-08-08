@@ -171,6 +171,9 @@ class NavbarScrollManager {
     // Only apply to desktop navbar
     if (!this.navbar || window.innerWidth <= 768) return;
     
+    // Initialize navbar in visible state
+    this.navbar.classList.add('navbar--visible');
+    
     // Use throttled scroll handler for better INP
     const throttledScroll = throttle(() => {
       this.isScrolling = true;
@@ -186,6 +189,7 @@ class NavbarScrollManager {
         if (this.navbar) {
           this.navbar.style.transform = '';
           this.navbar.style.transition = '';
+          this.navbar.classList.remove('navbar--hidden', 'navbar--visible');
         }
       }
     }, 250);
@@ -229,16 +233,16 @@ class NavbarScrollManager {
   hideNavbar() {
     if (!this.navbar) return;
     
-    // Use transform for better performance than changing top/left
-    this.navbar.style.transform = 'translateX(-50%) translateY(-130%)';
-    this.navbar.style.transition = 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+    // Use CSS classes for better performance and reliability
+    this.navbar.classList.remove('navbar--visible');
+    this.navbar.classList.add('navbar--hidden');
   }
   
   showNavbar() {
     if (!this.navbar) return;
     
-    this.navbar.style.transform = 'translateX(-50%) translateY(0)';
-    this.navbar.style.transition = 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+    this.navbar.classList.remove('navbar--hidden');
+    this.navbar.classList.add('navbar--visible');
   }
   
   destroy() {
