@@ -10,7 +10,9 @@
   100% { transform: rotate(360deg); }
 }
 /* Simple Homepage Styles */
-
+/* *{
+  border: 2px solid green;
+} */
 body {
   background: #eaeef6;
   font-family: 'Open Sans', sans-serif;

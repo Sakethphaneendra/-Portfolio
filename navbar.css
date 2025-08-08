@@ -12,7 +12,9 @@ body {
   padding-top: 80px; /* Space for desktop navbar */
 }
 
-
+/* *{
+  border: 2px solid green;
+} */
 
 /* Desktop Navigation - Solid Premium Design */
 @media (min-width: 769px) {
@@ -30,10 +32,9 @@ body {
     min-width: 350px;
     z-index: 1000;
     border: 1px solid rgba(0, 0, 0, 0.08);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     will-change: transform;
   }
@@ -57,10 +58,10 @@ body {
     list-style: none;
     margin: 0;
     padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
   }
 
   .navbar__link {
@@ -275,7 +276,6 @@ body {
 
   /* Hide mobile controls on desktop */
   .mobile-top-controls,
-  .mobile-navbar,
   .mobile-theme-toggle {
     display: none;
   }
@@ -1818,6 +1818,16 @@ body.dark-mode .mac-terminal {
   letter-spacing: -1px;
   position: relative;
 }
+.portfolio-titles{
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bolder;
+  margin-bottom: 1rem;
+  letter-spacing: -1px;
+  line-height: 110%;
+  position: relative;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
 
 /* Floating Pill Tags */
 .tagged-word {
@@ -2423,8 +2433,8 @@ body.dark-mode .image-overlay {
 /* Experience Badge Styles */
 .experience-badge {
   position: absolute;
-  right: 30%;
-  bottom: -10px;
+  right: 27%;
+  bottom: -30%;
   padding: 0.4rem 1rem;
   background: linear-gradient(135deg, #b99ef8 0%, #8b5cf6 100%);
   color: white;
@@ -2957,7 +2967,7 @@ body.dark-mode .image-overlay {
   display: flex;  
   align-items: center;
   justify-content: center;
-    flex-direction: row;
+  flex-direction: row;
 
 }
 
@@ -3017,7 +3027,9 @@ body.dark-mode .image-overlay {
   margin-top: 10%;
 
 }
-
+.banner-content-flex{
+  margin-top: -15%;
+}
 .banner-title {
   font-family: 'Allura', cursive;
   font-size: 4rem;
