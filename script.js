@@ -1359,7 +1359,7 @@ function initAnimatedGrid() {
   const props = {
     width: 22,
     height: 29,
-    size: 4.2
+    size: 4.5
   };
 
   // Setup grid points

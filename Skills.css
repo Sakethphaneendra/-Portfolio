@@ -621,7 +621,7 @@
 .dev-skills-list {
 	display: flex;
 	flex-direction: column;
-	gap: 0.6rem; /* Reduced gap */
+	gap: 0.3rem; /* Reduced gap */
 	width: 100%;
 	flex: 1;
 	overflow-y: auto;
@@ -639,7 +639,7 @@
 .design-skills-list {
 	display: flex;
 	flex-direction: column;
-	gap: 0.6rem; /* Same gap as other cells */
+	gap: 0.3rem; /* Same gap as other cells */
 	width: 100%;
 	flex: 1;
 	overflow-y: auto;
@@ -1008,16 +1008,16 @@
 /* Responsive adjustments */
 @media (max-width: 768px) {
 	.skills-software-cell {
-		padding: 0.8rem;
+		padding: 1rem;
 		margin-right: 8%; /* Reduced margin for tablets */
 	}
 	
 	.skills-development-cell {
-		padding: 0.8rem;
+		padding: 1rem;
 	}
 	
 	.skills-design-cell {
-		padding: 0.8rem;
+		padding: 1rem;
 	}
 	
 	.skills-header {
@@ -1039,7 +1039,7 @@
 	}
 	
 	.skills-list, .dev-skills-list, .design-skills-list {
-		gap: 0.6rem;
+		gap: 0.3rem;
 		padding-right: 6px;
 	}
 	
@@ -1684,7 +1684,7 @@
 
 /* Water Wave Animation Cell Styles */
 .water-wave-cell {
-	background: #0d1117 !important;
+	background: #000000 !important;
 	overflow: hidden;
 	display: flex;
 	align-items: center;
@@ -1729,74 +1729,120 @@
 	}
 }
 
-/* Interactive Calendar Cell Styles */
-.car-animation-cell {
-	background: #0d1117 !important;
-	border-radius: 16px;
-	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+/* Character Animation Cell Styles */
+.character-animation-cell {
+	background-color: black !important;
+	overflow: hidden;
+	font-family: sans-serif;
+	font-weight: 100;
+	width: 100%;
+	height: 100%;
+	text-rendering: optimizeLegibility;
+	position: relative;
+	padding: 0;
+	margin: 0;
+}
+
+.character-animation-cell .content {
+	text-align: center;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.character-animation-cell .random {
+	color: #eee;
+	opacity: 0;
+	display: block;
+	text-transform: uppercase;
+	font-weight: 100;
+	cursor: pointer;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	white-space: nowrap;
+	max-width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-size: clamp(0.8rem, 1.8vw, 1.2rem);
+	line-height: 1.1;
+}
+
+.character-animation-cell .randomCharacter {
+	display: inline-block;
+	opacity: 0;
+}
+
+/* Responsive adjustments for character animation */
+@media (max-width: 768px) {
+	.character-animation-cell .random {
+		font-size: clamp(0.6rem, 1.5vw, 0.9rem);
+		white-space: normal;
+		word-break: break-word;
+		line-height: 1.2;
+	}
+}
+
+@media (min-width: 769px) {
+	.character-animation-cell .random {
+		white-space: nowrap;
+		font-size: clamp(0.9rem, 2.2vw, 1.4rem);
+		line-height: 1.1;
+	}
+}
+
+/* Van Animation Cell - Clean Cartoon Style */
+.van-animation-cell {
+	background: linear-gradient(135deg, #6260e8 0%, #5a4fcf 50%, #4f46e5 100%) !important;
 	overflow: hidden;
 	position: relative;
 	display: flex;
 	align-items: center;
-	justify-content: space-evenly;
-	flex-direction: column;
-	padding: 0.8rem;
-	font-family: sans-serif;
-	min-height: 100%;
+	justify-content: center;
+	border-radius: 16px;
+	box-shadow: 0 8px 32px rgba(98, 96, 232, 0.3);
 }
 
-.car-animation-cell header {
-	padding-top: 0.25rem;
-	display: flex;
-	justify-items: center;
-	align-items: center;
-	font-size: 0.8rem;
+.van-container {
+	position: relative;
 	width: 100%;
-	justify-content: space-between;
-	margin-bottom: 0.25rem;
-}
-
-.car-animation-cell button {
+	height: 100%;
 	display: flex;
-	justify-items: center;
 	align-items: center;
-	background: none;
-	color: white;
-	width: 1.5rem;
-	height: 1.2rem;
-	border: none;
-	padding: 0 0.25rem;
-	cursor: pointer;
-	border-radius: 3px;
-	transition: background-color 0.3s ease;
+	justify-content: center;
 }
 
-.car-animation-cell button:hover {
-	background-color: rgba(255, 255, 255, 0.1);
+.van {
+	position: relative;
+	animation: cartoonFloat 4s ease-in-out infinite;
+	transform-origin: center;
+	z-index: 10;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
-.car-animation-cell button svg {
-	width: 12px;
-	height: 12px;
+.van-image {
+	width: 60%;
+	max-width: 60%;
+	height: auto;
+	display: block;
+	margin: 0 auto;
+	filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.3));
+	transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-.car-animation-cell h1 {
-	color: white;
-	text-align: center;
-	margin: 0;
-	font-size: 0.75rem;
-	font-weight: 600;
-	white-space: nowrap;
+.van:hover .van-image {
+	transform: scale(1.15) rotate(5deg);
+	filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.4));
 }
 
-.car-animation-cell css-doodle {
-	height: min(70%, 120px);
-	width: 90%;
-	max-width: 90%;
-	flex: 1;
-}
-
-.car-animation-cell .cell-number {
+.van-animation-cell .cell-number {
 	position: absolute;
 	top: 8px;
 	right: 8px;
@@ -1808,375 +1854,234 @@
 	font-weight: 600;
 	backdrop-filter: blur(10px);
 	border: 1px solid rgba(255, 255, 255, 0.3);
-	z-index: 10;
+	z-index: 20;
 }
 
-/* Responsive adjustments for Calendar Cell */
+/* Cartoon-style Float Animation */
+@keyframes cartoonFloat {
+	0%, 100% {
+		transform: translateY(0px) translateX(-3px) rotate(0deg);
+	}
+	25% {
+		transform: translateY(-8px) translateX(0px) rotate(1deg);
+	}
+	50% {
+		transform: translateY(-5px) translateX(3px) rotate(0deg);
+	}
+	75% {
+		transform: translateY(-12px) translateX(0px) rotate(-1deg);
+	}
+}
+
+/* Gen Z Shimmer Effect */
+.van-animation-cell::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: linear-gradient(45deg, 
+		transparent 30%, 
+		rgba(255, 255, 255, 0.15) 50%, 
+		transparent 70%);
+	animation: shimmer 5s ease-in-out infinite;
+	pointer-events: none;
+}
+
+@keyframes shimmer {
+	0%, 100% {
+		transform: translateX(-100%);
+	}
+	50% {
+		transform: translateX(100%);
+	}
+}
+
+/* Responsive adjustments for van animation */
 @media (max-width: 768px) {
-	.car-animation-cell {
-		padding: 0.25rem;
+	.van-image {
+		width: 55%;
+		max-width: 55%;
 	}
 	
-	.car-animation-cell header {
-		font-size: 0.65rem;
-		margin-bottom: 0.15rem;
-	}
-	
-	.car-animation-cell h1 {
-		font-size: 0.7rem;
-	}
-	
-	.car-animation-cell button {
-		width: 1.2rem;
-		height: 1rem;
-		padding: 0 0.15rem;
-	}
-	
-	.car-animation-cell button svg {
-		width: 10px;
-		height: 10px;
-	}
-	
-	.car-animation-cell css-doodle {
-		height: min(65%, 100px);
-		width: 85%;
-	}
-	
-	.car-animation-cell .cell-number {
+	.van-animation-cell .cell-number {
 		top: 4px;
 		right: 4px;
 		font-size: 0.7rem;
 		padding: 2px 6px;
 	}
+	
+	@keyframes cartoonFloat {
+		0%, 100% {
+			transform: translateY(0px) translateX(-2px) rotate(0deg);
+		}
+		25% {
+			transform: translateY(-6px) translateX(0px) rotate(1deg);
+		}
+		50% {
+			transform: translateY(-3px) translateX(2px) rotate(0deg);
+		}
+		75% {
+			transform: translateY(-8px) translateX(0px) rotate(-1deg);
+		}
+	}
 }
 
-/* Calendar Cell Styles */
-.calendar-cell {
-    background: #0d1117 !important;
-    border-radius: 16px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-    overflow: hidden;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-direction: column;
-    padding: 0.8rem;
-    font-family: sans-serif;
-    min-height: 100%;
-    
-    box-sizing: border-box;
+/* Coding Terminal Cell */
+.coding-terminal-cell {
+	background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%) !important;
+	border: 1px solid #3a3a3a;
+	border-radius: 12px;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-.calendar-cell header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 0.5rem;
+.mini-terminal {
+	width: 90%;
+	height: 80%;
+	background: #1e1e1e;
+	border-radius: 8px;
+	border: 1px solid #404040;
+	overflow: hidden;
+	font-family: 'Courier New', Monaco, monospace;
+	box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-.calendar-cell h1 {
-    color: white;
-    text-align: center;
-    margin: 0;
-    font-size: 0.9rem;
-    font-weight: 600;
-    white-space: nowrap;
+.terminal-header {
+	background: linear-gradient(to bottom, #3c3c3c, #2a2a2a);
+	height: 24px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 8px;
+	border-bottom: 1px solid #1a1a1a;
 }
 
-.calendar-cell css-doodle {
-    height: calc(100% - 60px);
-    width: 100%;
-    max-width: 100%;
-    flex: 1;
-    
+.terminal-controls {
+	display: flex;
+	gap: 4px;
 }
 
-.calendar-cell .cell-number {
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
-    padding: 4px 8px;
-    border-radius: 12px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    z-index: 10;
+.control-btn {
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	cursor: pointer;
 }
 
-/* Responsive adjustments for Calendar Cell */
+.control-btn.close {
+	background: #ff5f57;
+}
+
+.control-btn.minimize {
+	background: #ffbd2e;
+}
+
+.control-btn.maximize {
+	background: #28ca42;
+}
+
+.terminal-title {
+	color: #8a8a8a;
+	font-size: 10px;
+	font-weight: 500;
+}
+
+.terminal-body {
+	padding: 8px;
+	height: calc(100% - 24px);
+	background: #1e1e1e;
+	color: #00ff00;
+	font-size: 11px;
+	line-height: 1.4;
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+}
+
+.code-line {
+	display: flex;
+	align-items: center;
+	width: 100%;
+}
+
+.prompt {
+	color: #00ff00;
+	margin-right: 4px;
+	font-weight: bold;
+}
+
+.typing-text {
+	color: #ffffff;
+	font-weight: normal;
+}
+
+.cursor-blink {
+	color: #00ff00;
+	animation: blink 1s infinite;
+	margin-left: 2px;
+}
+
+@keyframes blink {
+	0%, 50% {
+		opacity: 1;
+	}
+	51%, 100% {
+		opacity: 0;
+	}
+}
+
+.coding-terminal-cell .cell-number {
+	position: absolute;
+	top: 6px;
+	right: 6px;
+	background: rgba(0, 255, 0, 0.1);
+	color: #00ff00;
+	padding: 2px 6px;
+	border-radius: 8px;
+	font-size: 10px;
+	font-weight: 600;
+	border: 1px solid rgba(0, 255, 0, 0.3);
+	font-family: 'Courier New', Monaco, monospace;
+	z-index: 10;
+}
+
+/* Responsive adjustments for coding terminal */
 @media (max-width: 768px) {
-    .calendar-cell {
-        padding: 5px;
-        
-    }
-    
-    .calendar-cell h1 {
-        font-size: 0.7rem;
-    }
-    
-    .calendar-cell css-doodle {
-        height: calc(100% - 50px);
-        
-    }
-    
-    .calendar-cell .cell-number {
-        top: 4px;
-        right: 4px;
-        font-size: 0.7rem;
-        padding: 2px 6px;
-    }
+	.mini-terminal {
+		width: 95%;
+		height: 85%;
+	}
+	
+	.terminal-header {
+		height: 20px;
+		padding: 0 6px;
+	}
+	
+	.control-btn {
+		width: 6px;
+		height: 6px;
+	}
+	
+	.terminal-title {
+		font-size: 8px;
+	}
+	
+	.terminal-body {
+		padding: 6px;
+		font-size: 9px;
+	}
+	
+	.coding-terminal-cell .cell-number {
+		top: 4px;
+		right: 4px;
+		font-size: 8px;
+		padding: 1px 4px;
+	}
 }
 
-
-
-/* GitHub Heatmap Cell Styles */
-:root {
-    /* GitHub Heatmap Colors */
-    --github-bg: #0d1117;
-    --github-empty: #161b22;
-    --github-level1: #0e4429;
-    --github-level2: #006d32;
-    --github-level3: #26a641;
-    --github-level4: #39d353;
-    --github-text: #c9d1d9;
-    --github-border: #30363d;
-    
-    /* Heatmap Sizes */
-    --cell-size: 14px;
-    --cell-radius: 3px;
-    --cell-gap: 4px;
-}
-
-.github-heatmap-cell {
-    background: var(--github-bg) !important;
-    border-radius: 16px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-    overflow: hidden;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    padding: 0.8rem;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    min-height: 100%;
-}
-
-.github-heatmap { max-width: 200px; max-height: 120px;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    gap: 0.6rem;
-}
-
-.heatmap-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0.5rem;
-}
-
-.heatmap-header h3 {
-    color: var(--github-text);
-    font-size: 0.75rem;
-    font-weight: 600;
-    margin: 0;
-    white-space: nowrap;
-}
-
-.heatmap-legend {
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
-}
-
-.legend-text {
-    color: var(--github-text);
-    font-size: 0.7rem;
-    opacity: 0.7;
-}
-
-.legend-levels {
-    display: flex;
-    gap: 3px;
-}
-
-.legend-level {
-    width: 10px;
-    height: 10px;
-    border-radius: 1px;
-}
-
-.legend-level[data-level='0'] { background: var(--github-empty); }
-.legend-level[data-level='1'] { background: var(--github-level1); }
-.legend-level[data-level='2'] { background: var(--github-level2); }
-.legend-level[data-level='3'] { background: var(--github-level3); }
-.legend-level[data-level='4'] { background: var(--github-level4); }
-
-.heatmap-grid {
-    display: grid;
-    grid-template-columns: repeat(12, var(--cell-size));
-    grid-template-rows: repeat(7, var(--cell-size));
-    gap: var(--cell-gap);
-    justify-content: center;
-    flex: 1;
-    align-content: center;
-}
-
-.heatmap-cell {
-    width: var(--cell-size);
-    height: var(--cell-size);
-    border-radius: var(--cell-radius);
-    background: var(--github-empty);
-    cursor: pointer;
-    transition: all 0.2s ease;
-    position: relative;
-    tabindex: 0;
-}
-
-.heatmap-cell:hover {
-    transform: scale(1.1);
-    z-index: 10;
-}
-
-.heatmap-cell:focus {
-    outline: 2px solid var(--github-level3);
-    outline-offset: 1px;
-}
-
-.heatmap-cell[data-level='0'] { background: var(--github-empty); }
-.heatmap-cell[data-level='1'] { background: var(--github-level1); }
-.heatmap-cell[data-level='2'] { background: var(--github-level2); }
-.heatmap-cell[data-level='3'] { background: var(--github-level3); }
-.heatmap-cell[data-level='4'] { background: var(--github-level4); }
-
-.tooltip {
-    position: absolute;
-    background: var(--github-bg);
-    color: var(--github-text);
-    border: 1px solid var(--github-border);
-    border-radius: 6px;
-    padding: 0.8rem;
-    font-size: 0.65rem;
-    pointer-events: none;
-    opacity: 0;
-    transform: translateY(-100%);
-    transition: opacity 0.2s ease;
-    z-index: 100;
-    white-space: nowrap;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-}
-
-.tooltip.visible {
-    opacity: 1;
-}
-
-.github-heatmap-cell .cell-number {
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    background: rgba(255, 255, 255, 0.1);
-    color: var(--github-text);
-    padding: 4px 8px;
-    border-radius: 12px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    backdrop-filter: blur(10px);
-    border: 1px solid var(--github-border);
-    z-index: 10;
-}
-
-/* Responsive adjustments for GitHub Heatmap */
-@media (max-width: 768px) {
-    .github-heatmap-cell {
-        padding: 0.8rem;
-    }
-    
-    .heatmap-header h3 {
-        font-size: 0.65rem;
-    }
-    
-    .legend-text {
-        font-size: 0.7rem;
-    }
-    
-    .legend-level {
-        width: 10px;
-        height: 10px;
-    }
-    
-    .heatmap-grid {
-        grid-template-columns: repeat(12, 8px);
-        grid-template-rows: repeat(7, 8px);
-        gap: 3px;
-    }
-    
-    .heatmap-cell {
-        width: 10px;
-        height: 10px;
-    }
-    
-    .tooltip {
-        font-size: 0.7rem;
-        padding: 0.25rem;
-    }
-    
-    .github-heatmap-cell .cell-number {
-        top: 4px;
-        right: 4px;
-        font-size: 0.7rem;
-        padding: 2px 6px;
-    }
-}
-
-
-/* Additional centering for heatmap */
-.github-heatmap { max-width: 200px; max-height: 120px;
-    align-items: center !important;
-    justify-content: center !important;
-}
-
-.heatmap-grid {
-    justify-self: center !important;
-    align-self: center !important;
-    margin: 0 auto !important;
-    width: fit-content !important;
-    place-content: center !important;
-}
-
-.heatmap-header {
-    justify-content: center !important;
-    text-align: center !important;
-    width: 100% !important;
-}
-
-.heatmap-header h3 {
-    text-align: center !important;
-}
-
-/* Additional centering for heatmap */
-.github-heatmap { max-width: 200px; max-height: 120px;
-    align-items: center !important;
-    justify-content: center !important;
-}
-
-.heatmap-grid {
-    justify-self: center !important;
-    align-self: center !important;
-    margin: 0 auto !important;
-    width: fit-content !important;
-    place-content: center !important;
-}
-
-.heatmap-header {
-    justify-content: center !important;
-    text-align: center !important;
-    width: 100% !important;
-}
-
-.heatmap-header h3 {
-    text-align: center !important;
-}

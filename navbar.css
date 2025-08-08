@@ -2123,7 +2123,7 @@ body.dark-mode .image-overlay {
 /* Skills Grid Section Styles */
 .skills-grid-section {
   min-height: 100vh;
-  background: #000000;
+  /* background: #000000; */
   position: relative;
   overflow: hidden;
   display: flex;
@@ -2140,7 +2140,7 @@ body.dark-mode .image-overlay {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 5% 0% 5% 0%;
+  margin: 10% 0% 10% 0%;
 }
 
 .skills-grid-container {
