@@ -30,9 +30,10 @@ body {
     min-width: 350px;
     z-index: 1000;
     border: 1px solid rgba(0, 0, 0, 0.08);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     will-change: transform;
   }
@@ -47,17 +48,19 @@ body {
   }
 
   .navbar__main {
-    display: flex;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   }
 
   .navbar__menu {
     list-style: none;
     margin: 0;
     padding: 0;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
   }
 
   .navbar__link {
@@ -2954,10 +2957,10 @@ body.dark-mode .image-overlay {
   display: flex;  
   align-items: center;
   justify-content: center;
-    flex-direction: column;
-    border: 2px solid gray;
+    flex-direction: row;
 
 }
+
 .personal-life-section::before {
   content: '';
   position: absolute;
@@ -2990,6 +2993,8 @@ body.dark-mode .image-overlay {
   display: flex;
   justify-content: center;
   align-items: center;
+      flex-direction: row;
+
   position: relative;
   width: 100%;
   max-width: 1200px;
@@ -3002,7 +3007,15 @@ body.dark-mode .image-overlay {
 
 .banner-content {
   text-align: center;
+  display: flex;
+  gap: 8rem;
   z-index: 10;
+}
+.banner-svgs{
+}
+.svgss{
+  margin-top: 10%;
+
 }
 
 .banner-title {
