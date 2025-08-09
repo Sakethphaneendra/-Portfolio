@@ -276,6 +276,7 @@ body {
 
   /* Hide mobile controls on desktop */
   .mobile-top-controls,
+  .mobile-navbar,
   .mobile-theme-toggle {
     display: none;
   }
@@ -1818,16 +1819,6 @@ body.dark-mode .mac-terminal {
   letter-spacing: -1px;
   position: relative;
 }
-.portfolio-titles{
-  text-align: center;
-  font-size: 2.5rem;
-  font-weight: bolder;
-  margin-bottom: 1rem;
-  letter-spacing: -1px;
-  line-height: 110%;
-  position: relative;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
 
 /* Floating Pill Tags */
 .tagged-word {
@@ -2433,8 +2424,8 @@ body.dark-mode .image-overlay {
 /* Experience Badge Styles */
 .experience-badge {
   position: absolute;
-  right: 27%;
-  bottom: -30%;
+  right: 30%;
+  bottom: -10px;
   padding: 0.4rem 1rem;
   background: linear-gradient(135deg, #b99ef8 0%, #8b5cf6 100%);
   color: white;
@@ -2964,10 +2955,11 @@ body.dark-mode .image-overlay {
   background: #EAEEF6;
   position: relative;
   min-height: 60vh;
+  margin-top: 10%;
   display: flex;  
   align-items: center;
   justify-content: center;
-  flex-direction: row;
+  flex-direction: column;
 
 }
 
