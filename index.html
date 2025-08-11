@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
 
+=======
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saketh Phaneendra.</title>
+<<<<<<< HEAD
 
     <!-- Google Fonts for Personal Life Section -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,10 +16,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Allura:wght@400&family=Poppins:wght@400;500;600&display=swap"
         rel="stylesheet">
 
+=======
+    
+    <!-- Google Fonts for Personal Life Section -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Allura:wght@400&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
     <!-- Preload critical resources for LCP optimization -->
     <link rel="preload" href="navbar.css" as="style">
     <link rel="preload" href="homepage.css" as="style">
     <link rel="preload" href="https://unpkg.com/feather-icons" as="script">
+<<<<<<< HEAD
     <link rel="stylesheet" href="footer.css">
     <!-- Preload profile images to improve LCP -->
     <link rel="preload" href="profile-img/image1.webp" as="image">
@@ -27,29 +40,55 @@
 
         body {
             margin: 0;
+=======
+    
+    <!-- Preload profile images to improve LCP -->
+    <link rel="preload" href="profile-img/image1.webp" as="image">
+    <link rel="preload" href="profile-img/image2.webp" as="image">
+    
+    <!-- Critical CSS inline for fastest LCP -->
+    <style>
+        /* Critical CSS for above-the-fold content */
+        body { 
+            margin: 0; 
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             background: #eaeef6;
             overflow-x: hidden;
             line-height: 1.6;
         }
+<<<<<<< HEAD
 
         .hero-section {
             min-height: 100vh;
             display: flex;
             align-items: center;
+=======
+        .hero-section { 
+            min-height: 100vh; 
+            display: flex; 
+            align-items: center; 
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
             justify-content: center;
             position: relative;
             contain: layout style paint;
         }
+<<<<<<< HEAD
 
         .hero-content {
             text-align: center;
             z-index: 100;
+=======
+        .hero-content { 
+            text-align: center; 
+            z-index: 100; 
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
             position: relative;
             max-width: 900px;
             padding: 3rem;
             contain: layout style;
         }
+<<<<<<< HEAD
 
         .hero-title {
             font-size: clamp(2.5rem, 5vw, 4.5rem);
@@ -74,6 +113,22 @@
             /* Makes actual text transparent */
         }
 
+=======
+        .hero-title { 
+            font-size: clamp(2.5rem, 5vw, 4.5rem); 
+            font-weight: 700; 
+            color: #2d3748; 
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            contain: layout style;
+        }
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            color: #6a778e;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
         .hero-description {
             font-size: clamp(1rem, 2vw, 1.2rem);
             color: #718096;
@@ -82,10 +137,15 @@
             margin-left: auto;
             margin-right: auto;
         }
+<<<<<<< HEAD
 
         /* Ensure profile elements are ready for LCP */
         .desktop-profile-pic,
         .mobile-profile-pic {
+=======
+        /* Ensure profile elements are ready for LCP */
+        .desktop-profile-pic, .mobile-profile-pic {
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
             width: 50px;
             height: 50px;
             border-radius: 50%;
@@ -96,11 +156,15 @@
             color: white;
             font-weight: 600;
             cursor: pointer;
+<<<<<<< HEAD
             margin-top: 100%;
+=======
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
             transition: transform 0.3s ease;
             will-change: transform;
             contain: layout style paint;
         }
+<<<<<<< HEAD
 
         /* Reduce layout shift */
         .navbar,
@@ -115,6 +179,17 @@
             contain: layout style;
         }
 
+=======
+        /* Reduce layout shift */
+        .navbar, .mobile-navbar, .desktop-side-controls { 
+            position: fixed; 
+            contain: layout style;
+        }
+        .floating-tech-icons { 
+            position: absolute;
+            contain: layout style;
+        }
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
         /* Critical navigation styles */
         .navbar {
             top: 2rem;
@@ -122,21 +197,30 @@
             transform: translateX(-50%);
             z-index: 1000;
         }
+<<<<<<< HEAD
 
+=======
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
         .desktop-side-controls {
             left: 2rem;
             top: 50%;
             transform: translateY(-50%);
             z-index: 1000;
         }
+<<<<<<< HEAD
 
+=======
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
         .mobile-navbar {
             bottom: 0;
             left: 0;
             right: 0;
             z-index: 1000;
         }
+<<<<<<< HEAD
 
+=======
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
         /* Prevent flash of unstyled content */
         .skill-grid-cell {
             min-height: 120px;
@@ -144,7 +228,10 @@
             border-radius: 8px;
             position: relative;
         }
+<<<<<<< HEAD
 
+=======
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
         /* Optimize animations */
         * {
             transform: translateZ(0);
@@ -152,18 +239,27 @@
             -moz-osx-font-smoothing: grayscale;
         }
     </style>
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
     <!-- Load non-critical CSS with media="print" and switch to screen after load -->
     <link rel="stylesheet" href="navbar.css" media="print" onload="this.media='all'; this.onload=null;">
     <link rel="stylesheet" href="homepage.css" media="print" onload="this.media='all'; this.onload=null;">
     <link rel="stylesheet" href="Skills.css" media="print" onload="this.media='all'; this.onload=null;">
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
     <!-- Fallback for no-JS -->
     <noscript>
         <link rel="stylesheet" href="navbar.css">
         <link rel="stylesheet" href="homepage.css">
         <link rel="stylesheet" href="Skills.css">
     </noscript>
+<<<<<<< HEAD
 
     <link rel="shortcut icon" href="/SP Logo.webp" type="image/x-icon">
 </head>
@@ -173,6 +269,12 @@
     <!-- The Update Banner -->
 
 
+=======
+    
+    <link rel="shortcut icon" href="/SP Logo.webp" type="image/x-icon">
+</head>
+<body>
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
     <nav class="navbar">
         <div class="navbar__main">
             <ul class="navbar__menu">
@@ -180,6 +282,7 @@
                     <a href="#" class="navbar__link" data-tooltip="Home"><i data-feather="home"></i></a>
                 </li>
                 <li class="navbar__item">
+<<<<<<< HEAD
                     <a href="#about" class="navbar__link" data-tooltip="About"><i data-feather="user"></i></a>
                 </li>
                 <li class="navbar__item">
@@ -189,16 +292,30 @@
 <a href="#experience" class="navbar__link" data-tooltip="Experience">
   <i data-feather="briefcase"></i>
 </a>                </li>
+=======
+                    <a href="#" class="navbar__link" data-tooltip="About"><i data-feather="user"></i></a>        
+                </li>
+                <li class="navbar__item">
+                    <a href="#projects" class="navbar__link" data-tooltip="Projects"><i data-feather="folder"></i></a>        
+                </li>
+                <li class="navbar__item">
+                    <a href="#" class="navbar__link" data-tooltip="Resume"><i data-feather="file-text"></i></a>        
+                </li>
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
             </ul>
         </div>
     </nav>
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
     <!-- Desktop Side Controls -->
     <div class="desktop-side-controls">
         <div class="desktop-profile-container">
             <div class="desktop-profile-pic" id="desktop-profile" onclick="cycleProfileImage()">SP</div>
             <div class="desktop-social-dropdown">
+<<<<<<< HEAD
                 <a href="https://www.linkedin.com/in/sakethphaneendra/" class="desktop-social-link linkedin"
                     target="_blank">
                     <i data-feather="linkedin"></i>
@@ -206,6 +323,13 @@
                 </a>
                 <a href="https://www.instagram.com/saketh_phaneendra_/" class="desktop-social-link instagram"
                     target="_blank">
+=======
+                <a href="https://www.linkedin.com/in/sakethphaneendra/" class="desktop-social-link linkedin" target="_blank">
+                    <i data-feather="linkedin"></i>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://www.instagram.com/saketh_phaneendra_/" class="desktop-social-link instagram" target="_blank">
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
                     <i data-feather="instagram"></i>
                     <span>Instagram</span>
                 </a>
@@ -213,8 +337,12 @@
                     <i data-feather="github"></i>
                     <span>GitHub</span>
                 </a>
+<<<<<<< HEAD
                 <a href="https://leetcode.com/u/saketh_phaneendra_/" class="desktop-social-link leetcode"
                     target="_blank">
+=======
+                <a href="https://leetcode.com/u/saketh_phaneendra_/" class="desktop-social-link leetcode" target="_blank">
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
                     <i data-feather="code"></i>
                     <span>LeetCode</span>
                 </a>
@@ -228,7 +356,38 @@
     </button> -->
 
     <!-- Mobile Top Controls -->
+<<<<<<< HEAD
 
+=======
+    <div class="mobile-top-controls">
+        <div class="mobile-profile-container">
+            <div class="mobile-profile-pic" id="mobile-profile" onclick="cycleProfileImage()">SP</div>
+            <div class="mobile-social-dropdown">
+                <a href="https://www.linkedin.com/in/sakethphaneendra/" class="mobile-social-link linkedin" target="_blank">
+                    <i data-feather="linkedin"></i>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://www.instagram.com/saketh_phaneendra_/" class="mobile-social-link instagram" target="_blank">
+                    <i data-feather="instagram"></i>
+                    <span>Instagram</span>
+                </a>
+                <a href="https://github.com/Sakethphaneendra" class="mobile-social-link github" target="_blank">
+                    <i data-feather="github"></i>
+                    <span>GitHub</span>
+                </a>
+                <a href="https://leetcode.com/u/saketh_phaneendra_/" class="mobile-social-link leetcode" target="_blank">
+                    <i data-feather="code"></i>
+                    <span>LeetCode</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Theme Toggle (Right Side) -->
+    <button class="mobile-theme-toggle" onclick="toggleTheme()">
+        <i data-feather="sun" id="mobile-theme-icon"></i>
+    </button>
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
 
     <!-- Mobile Bottom Navigation -->
     <nav class="mobile-navbar">
@@ -263,6 +422,7 @@
     <!-- Hero Section -->
     <section class="hero-section">
         <!-- Floating Tech Icons -->
+<<<<<<< HEAD
 
         <div class="hero-content">
             <h1 class="hero-title">Saketh Phaneendra</h1>
@@ -279,11 +439,14 @@
             </div>
         </div>
 
+=======
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
         <div class="floating-tech-icons">
             <div class="tech-icon tech-icon-1">
                 <i data-feather="code"></i>
             </div>
             <div class="tech-icon tech-icon-2">
+<<<<<<< HEAD
 
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-11.5 -10.23174 23 20.46348" width="48" height="48">
                     <circle r="2.05" fill="#61dafb" />
@@ -336,10 +499,32 @@
            L134 44 Z"/>
 </svg>
 
+=======
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- React Logo -->
+                    <path d="M12 13.5C12.8284 13.5 13.5 12.8284 13.5 12C13.5 11.1716 12.8284 10.5 12 10.5C11.1716 10.5 10.5 11.1716 10.5 12C10.5 12.8284 11.1716 13.5 12 13.5Z" fill="#61DAFB"/>
+                    <path d="M12 1C15.5 1 21 4 21 8.5C21 13 15.5 16 12 16C8.5 16 3 13 3 8.5C3 4 8.5 1 12 1Z" stroke="#61DAFB" stroke-width="1.5" fill="none"/>
+                    <path d="M12 8C15.5 8 21 11 21 15.5C21 20 15.5 23 12 23C8.5 23 3 20 3 15.5C3 11 8.5 8 12 8Z" stroke="#61DAFB" stroke-width="1.5" fill="none"/>
+                    <path d="M12 8C8.5 8 3 4 3 8.5C3 13 8.5 16 12 16C15.5 16 21 13 21 8.5C21 4 15.5 8 12 8Z" stroke="#61DAFB" stroke-width="1.5" fill="none"/>
+                </svg>
+            </div>
+            <div class="tech-icon tech-icon-3">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Vite Logo -->
+                    <path d="M8.5 2L4 22L12 18L20 22L15.5 2L12 6L8.5 2Z" fill="url(#vite-gradient)"/>
+                    <defs>
+                        <linearGradient id="vite-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#41D1FF"/>
+                            <stop offset="100%" style="stop-color:#BD34FE"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
             </div>
             <div class="tech-icon tech-icon-4">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <!-- Java Logo -->
+<<<<<<< HEAD
                     <path
                         d="M8.5 17.5C8.5 17.5 7.5 18.5 9.5 18.8C11.8 19.2 13 19 15.5 18.5C15.5 18.5 16.2 19.1 17.5 19.5C11 22 4 19.5 8.5 17.5Z"
                         fill="#ED8B00" />
@@ -349,6 +534,11 @@
                     <path
                         d="M13.5 12C16 12.5 18.5 10.5 18.5 8.5C18.5 5.5 15 4 12 4C9 4 6.5 6 6.5 8.5C6.5 11 9 12 11.5 12H13.5Z"
                         fill="#5382A1" />
+=======
+                    <path d="M8.5 17.5C8.5 17.5 7.5 18.5 9.5 18.8C11.8 19.2 13 19 15.5 18.5C15.5 18.5 16.2 19.1 17.5 19.5C11 22 4 19.5 8.5 17.5Z" fill="#ED8B00"/>
+                    <path d="M8 15.5C8 15.5 7 16.5 9 16.8C11.5 17.2 13.5 17.1 16.5 16.2C16.5 16.2 17 16.7 18 17C10.8 19.5 3.5 17.2 8 15.5Z" fill="#ED8B00"/>
+                    <path d="M13.5 12C16 12.5 18.5 10.5 18.5 8.5C18.5 5.5 15 4 12 4C9 4 6.5 6 6.5 8.5C6.5 11 9 12 11.5 12H13.5Z" fill="#5382A1"/>
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
                 </svg>
             </div>
             <div class="tech-icon tech-icon-5">
@@ -368,44 +558,73 @@
             <div class="tech-icon tech-icon-9">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <!-- CSS3 Logo -->
+<<<<<<< HEAD
                     <path d="M1.5 2L3 22L12 24L21 22L22.5 2H1.5Z" fill="#1572B6" />
                     <path d="M12 4H20.5L19.5 20L12 22V4Z" fill="#33A9DC" />
                     <path d="M12 8.5H16.5L16 13.5L12 14.5V17.5L17 16L18 8.5H12Z" fill="white" />
                     <path d="M12 8.5V6H6L6.5 8.5H12Z" fill="white" />
+=======
+                    <path d="M1.5 2L3 22L12 24L21 22L22.5 2H1.5Z" fill="#1572B6"/>
+                    <path d="M12 4H20.5L19.5 20L12 22V4Z" fill="#33A9DC"/>
+                    <path d="M12 8.5H16.5L16 13.5L12 14.5V17.5L17 16L18 8.5H12Z" fill="white"/>
+                    <path d="M12 8.5V6H6L6.5 8.5H12Z" fill="white"/>
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
                 </svg>
             </div>
             <div class="tech-icon tech-icon-10">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <!-- SCSS Logo -->
+<<<<<<< HEAD
                     <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0z" fill="#CF649A" />
                     <path
                         d="M18.5 14c-.5 1.5-2 2.5-3.5 2.5-1 0-1.5-.5-1.5-1 0-1 1-1.5 2.5-2s2.5-1 2.5-2.5c0-1.5-1-2.5-2.5-2.5-2 0-3 1-3 2.5h1c0-1 .5-1.5 1.5-1.5s1.5.5 1.5 1c0 .5-.5 1-1.5 1.5s-2.5 1-2.5 2.5c0 1.5 1 2.5 2.5 2.5 2 0 3-1 3.5-2.5h-1z"
                         fill="white" />
+=======
+                    <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0z" fill="#CF649A"/>
+                    <path d="M18.5 14c-.5 1.5-2 2.5-3.5 2.5-1 0-1.5-.5-1.5-1 0-1 1-1.5 2.5-2s2.5-1 2.5-2.5c0-1.5-1-2.5-2.5-2.5-2 0-3 1-3 2.5h1c0-1 .5-1.5 1.5-1.5s1.5.5 1.5 1c0 .5-.5 1-1.5 1.5s-2.5 1-2.5 2.5c0 1.5 1 2.5 2.5 2.5 2 0 3-1 3.5-2.5h-1z" fill="white"/>
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
                 </svg>
             </div>
             <div class="tech-icon tech-icon-11">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <!-- Vercel Logo -->
+<<<<<<< HEAD
                     <path d="M12 1L24 21H0L12 1Z" fill="#000000" />
+=======
+                    <path d="M12 1L24 21H0L12 1Z" fill="#000000"/>
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
                 </svg>
             </div>
             <div class="tech-icon tech-icon-12">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <!-- VS Code Logo -->
+<<<<<<< HEAD
                     <path d="M17.5 2.5L23 5.5V18.5L17.5 21.5L1 16V8L17.5 2.5Z" fill="#007ACC" />
                     <path d="M17.5 2.5V21.5L23 18.5V5.5L17.5 2.5Z" fill="#1F9CF0" />
                     <path d="M17.5 6L7 12L17.5 18V6Z" fill="white" />
                     <path d="M1 8L5 11L1 16V8Z" fill="white" />
+=======
+                    <path d="M17.5 2.5L23 5.5V18.5L17.5 21.5L1 16V8L17.5 2.5Z" fill="#007ACC"/>
+                    <path d="M17.5 2.5V21.5L23 18.5V5.5L17.5 2.5Z" fill="#1F9CF0"/>
+                    <path d="M17.5 6L7 12L17.5 18V6Z" fill="white"/>
+                    <path d="M1 8L5 11L1 16V8Z" fill="white"/>
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
                 </svg>
             </div>
             <div class="tech-icon tech-icon-13">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <!-- LeetCode Logo -->
+<<<<<<< HEAD
                     <path
                         d="M13.5 12C16 12.5 18.5 10.5 18.5 8.5C18.5 5.5 15 4 12 4C9 4 6.5 6 6.5 8.5C6.5 11 9 12 11.5 12H13.5Z"
                         fill="#FFA116" />
                     <path d="M3 16H21V18H3V16Z" fill="#FFA116" />
                     <circle cx="18" cy="17" r="2" fill="#FFA116" />
+=======
+                    <path d="M13.5 12C16 12.5 18.5 10.5 18.5 8.5C18.5 5.5 15 4 12 4C9 4 6.5 6 6.5 8.5C6.5 11 9 12 11.5 12H13.5Z" fill="#FFA116"/>
+                    <path d="M3 16H21V18H3V16Z" fill="#FFA116"/>
+                    <circle cx="18" cy="17" r="2" fill="#FFA116"/>
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
                 </svg>
             </div>
         </div>
@@ -494,8 +713,27 @@
         <div class="mobile-terminal-2">
             <i data-feather="code" class="mobile-terminal-icon"></i>
         </div>
+<<<<<<< HEAD
 
 
+=======
+        
+        <div class="hero-content">
+            <h1 class="hero-title">Saketh Phaneendra</h1>
+            <p class="hero-subtitle">Full Stack Developer & Designer</p>
+            <p class="hero-description">
+                Passionate about creating beautiful, functional, and user-centered digital experiences.
+            </p>
+            <div class="cta-buttons">
+                <a href="#projects" class="cta-button">View My Work</a>
+                <a href="#resume" class="cta-button resume-btn" id="resume-btn">
+                    <span class="btn-text">Resume</span>
+                    <i data-feather="download" class="download-icon"></i>
+                </a>
+            </div>
+        </div>
+        
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
         <!-- Circular Text Animation -->
         <!-- <div class="ellipse">
             <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
@@ -508,8 +746,13 @@
                     </textPath>
                 </text>
             </svg>
+<<<<<<< HEAD
             Animated Arrow in Center -->
         <!-- <div class="center-arrow">
+=======
+            <!-- Animated Arrow in Center -->
+            <!-- <div class="center-arrow">
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
                 <i data-feather="arrow-down"></i>
             </div> -->
         <!-- </div>  -->
@@ -519,9 +762,15 @@
     <section class="dark-portfolio-section" id="projects">
         <div class="stars-background"></div>
         <div class="portfolio-container">
+<<<<<<< HEAD
 
             <h2 class="portfolio-title">My Latest Works</h2>
 
+=======
+           
+                <h2 class="portfolio-title">My Latest Works</h2>
+            
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
             <div class="projects-list">
                 <!-- Project 1 -->
                 <div class="project-item" data-project="1">
@@ -535,7 +784,11 @@
                             <i data-feather="arrow-right" class="arrow-rigt-side"></i>
                         </div>
                     </a>
+<<<<<<< HEAD
 
+=======
+                    
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
                     <!-- Floating Preview -->
                     <div class="floating-preview">
                         <div class="preview-card">
@@ -546,7 +799,11 @@
                         </div>
                     </div>
                 </div>
+<<<<<<< HEAD
 
+=======
+                
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
                 <!-- Project 2 -->
                 <div class="project-item" data-project="2">
                     <a href="https://quick-cart-theta-ten.vercel.app/" target="_blank" class="project-link">
@@ -559,7 +816,11 @@
                             <i data-feather="arrow-right" class="arrow-rigt-side"></i>
                         </div>
                     </a>
+<<<<<<< HEAD
 
+=======
+                    
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
                     <!-- Floating Preview -->
                     <div class="floating-preview">
                         <div class="preview-card">
@@ -570,7 +831,11 @@
                         </div>
                     </div>
                 </div>
+<<<<<<< HEAD
 
+=======
+                
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
                 <!-- Project 3 -->
                 <div class="project-item" data-project="3">
                     <a href="https://algo-vibs-yblf.vercel.app/" target="_blank" class="project-link">
@@ -583,7 +848,11 @@
                             <i data-feather="arrow-right" class="arrow-rigt-side"></i>
                         </div>
                     </a>
+<<<<<<< HEAD
 
+=======
+                    
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
                     <!-- Floating Preview -->
                     <div class="floating-preview">
                         <div class="preview-card">
@@ -594,7 +863,11 @@
                         </div>
                     </div>
                 </div>
+<<<<<<< HEAD
 
+=======
+                
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
                 <!-- Project 4 -->
                 <div class="project-item" data-project="4">
                     <a href="https://wallet-wizard-zeta.vercel.app/" target="_blank" class="project-link">
@@ -607,7 +880,11 @@
                             <i data-feather="arrow-right" class="arrow-rigt-side"></i>
                         </div>
                     </a>
+<<<<<<< HEAD
 
+=======
+                    
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
                     <!-- Floating Preview -->
                     <div class="floating-preview">
                         <div class="preview-card">
@@ -618,7 +895,11 @@
                         </div>
                     </div>
                 </div>
+<<<<<<< HEAD
 
+=======
+                
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
                 <!-- Project 5 -->
                 <div class="project-item" data-project="5">
                     <a href="https://snap-qr-lime.vercel.app/" target="_blank" class="project-link">
@@ -631,7 +912,11 @@
                             <i data-feather="arrow-right" class="arrow-rigt-side"></i>
                         </div>
                     </a>
+<<<<<<< HEAD
 
+=======
+                    
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
                     <!-- Floating Preview -->
                     <div class="floating-preview">
                         <div class="preview-card">
@@ -647,7 +932,11 @@
     </section>
 
     <!-- Skills Grid Section -->
+<<<<<<< HEAD
     <section class="skills-grid-section" id="about">
+=======
+    <section class="skills-grid-section">
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
         <div class="skills-wrapper">
             <div class="skills-grid-container">
                 <div class="skills-pre-grid">
@@ -680,7 +969,11 @@
                                 <div class="c c1"></div>
                                 <div class="c c2"></div>
                                 <div class="c c3"></div>
+<<<<<<< HEAD
 
+=======
+                                
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
                                 <div class="rings">
                                     <div class="rings"></div>
                                 </div>
@@ -765,12 +1058,20 @@
                                     <div class="legs-1"></div>
                                     <div class="legs-2"></div>
                                     <div class="eyes"></div>
+<<<<<<< HEAD
 
                                 </div>
                                 <div class="crab-joke">
                                     <span class="question"><span class="highlight">Saketh's Crab </span> fixes bugs and
                                         <span class="highlight">steals his hearts 💘</span> </span>
                                 </div>
+=======
+                                    
+                                </div>
+                                <div class="crab-joke">
+                                        <span class="question"><span class="highlight">Saketh's Crab </span> fixes bugs and <span class="highlight">steals his hearts 💘</span> </span>
+                                    </div>
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
                             </div>
                         </div>
                     </div>
@@ -778,6 +1079,7 @@
                         <div class="keyboard">
                             <button class="keyboard__key keyboard__key--meta" type="button" data-key="cmd">
                                 <span class="keyboard__key-lines">
+<<<<<<< HEAD
                                     <svg class="keyboard__cmd keyboard__key-line--tr" viewBox="0 0 16 16" width="16px"
                                         height="16px" aria-hidden="true">
                                         <path fill="none" stroke="currentcolor" stroke-width="2"
@@ -785,6 +1087,12 @@
                                     </svg>
                                     <small
                                         class="keyboard__key-line keyboard__key-line--small keyboard__key-line--br">command</small>
+=======
+                                    <svg class="keyboard__cmd keyboard__key-line--tr" viewBox="0 0 16 16" width="16px" height="16px" aria-hidden="true">
+                                        <path fill="none" stroke="currentcolor" stroke-width="2" d="M5.7,10.3v2.3c0,1.3-1,2.3-2.3,2.3S1,14,1,12.7s1-2.3,2.3-2.3H5.7z M5.7,10.3h4.7 M5.7,10.3V5.7M10.3,10.3v2.3c0,1.3,1,2.3,2.3,2.3s2.3-1,2.3-2.3s-1-2.3-2.3-2.3H10.3z M10.3,10.3V5.7 M10.3,5.7H5.7 M10.3,5.7V3.3c0-1.3,1-2.3,2.3-2.3S15,2,15,3.3s-1,2.3-2.3,2.3H10.3z M5.7,5.7V3.3C5.7,2,4.6,1,3.3,1S1,2,1,3.3s1,2.3,2.3,2.3H5.7z" />
+                                    </svg>
+                                    <small class="keyboard__key-line keyboard__key-line--small keyboard__key-line--br">command</small>
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
                                 </span>
                             </button>
                             <button class="keyboard__key" type="button" data-key="c">
@@ -826,7 +1134,11 @@
                     </div>
                 </div>
             </div>
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
             <!-- Grid Lines for Cursor Effect -->
             <div class="skills-grid-lines">
                 <div class="skills-grid-lines_cursor-position">
@@ -843,6 +1155,7 @@
             <div class="tech-icon tech-icon-react">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <!-- React Logo -->
+<<<<<<< HEAD
                     <path
                         d="M12 13.5C12.8284 13.5 13.5 12.8284 13.5 12C13.5 11.1716 12.8284 10.5 12 10.5C11.1716 10.5 10.5 11.1716 10.5 12C10.5 12.8284 11.1716 13.5 12 13.5Z"
                         fill="#61DAFB" />
@@ -852,11 +1165,18 @@
                         stroke="#61DAFB" stroke-width="1.5" fill="none" />
                     <path d="M12 8C8.5 8 3 4 3 8.5C3 13 8.5 16 12 16C15.5 16 21 13 21 8.5C21 4 15.5 8 12 8Z"
                         stroke="#61DAFB" stroke-width="1.5" fill="none" />
+=======
+                    <path d="M12 13.5C12.8284 13.5 13.5 12.8284 13.5 12C13.5 11.1716 12.8284 10.5 12 10.5C11.1716 10.5 10.5 11.1716 10.5 12C10.5 12.8284 11.1716 13.5 12 13.5Z" fill="#61DAFB"/>
+                    <path d="M12 1C15.5 1 21 4 21 8.5C21 13 15.5 16 12 16C8.5 16 3 13 3 8.5C3 4 8.5 1 12 1Z" stroke="#61DAFB" stroke-width="1.5" fill="none"/>
+                    <path d="M12 8C15.5 8 21 11 21 15.5C21 20 15.5 23 12 23C8.5 23 3 20 3 15.5C3 11 8.5 8 12 8Z" stroke="#61DAFB" stroke-width="1.5" fill="none"/>
+                    <path d="M12 8C8.5 8 3 4 3 8.5C3 13 8.5 16 12 16C15.5 16 21 13 21 8.5C21 4 15.5 8 12 8Z" stroke="#61DAFB" stroke-width="1.5" fill="none"/>
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
                 </svg>
             </div>
             <div class="tech-icon tech-icon-js">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <!-- JavaScript Logo -->
+<<<<<<< HEAD
                     <rect width="24" height="24" fill="#F7DF1E" />
                     <path
                         d="M18.5 20.5C18.1 21.3 17.4 21.8 16.2 21.8C14.8 21.8 14 21.1 14 19.9V14H16V19.7C16 20.2 16.2 20.4 16.6 20.4C17 20.4 17.2 20.2 17.4 19.7L18.5 20.5Z"
@@ -864,29 +1184,49 @@
                     <path
                         d="M12 20.5C11.5 21.4 10.7 21.8 9.3 21.8C7.6 21.8 6.5 20.9 6.5 19.5C6.5 17.9 7.7 17.1 9.8 16.6L11 16.3V15.8C11 15.2 10.7 15 10.2 15C9.5 15 9.1 15.3 8.9 15.9L7.2 15.2C7.6 14.1 8.7 13.4 10.3 13.4C12.2 13.4 13.2 14.4 13.2 16V21.5H12Z"
                         fill="#000" />
+=======
+                    <rect width="24" height="24" fill="#F7DF1E"/>
+                    <path d="M18.5 20.5C18.1 21.3 17.4 21.8 16.2 21.8C14.8 21.8 14 21.1 14 19.9V14H16V19.7C16 20.2 16.2 20.4 16.6 20.4C17 20.4 17.2 20.2 17.4 19.7L18.5 20.5Z" fill="#000"/>
+                    <path d="M12 20.5C11.5 21.4 10.7 21.8 9.3 21.8C7.6 21.8 6.5 20.9 6.5 19.5C6.5 17.9 7.7 17.1 9.8 16.6L11 16.3V15.8C11 15.2 10.7 15 10.2 15C9.5 15 9.1 15.3 8.9 15.9L7.2 15.2C7.6 14.1 8.7 13.4 10.3 13.4C12.2 13.4 13.2 14.4 13.2 16V21.5H12Z" fill="#000"/>
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
                 </svg>
             </div>
             <div class="tech-icon tech-icon-html">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <!-- HTML5 Logo -->
+<<<<<<< HEAD
                     <path d="M1.5 2L3 22L12 24L21 22L22.5 2H1.5Z" fill="#E34F26" />
                     <path d="M12 4H20.5L19.5 20L12 22V4Z" fill="#EF652A" />
                     <path d="M12 8.5H16.5L16 13.5L12 14.5V17.5L17 16L18 8.5H12Z" fill="white" />
                     <path d="M12 8.5V6H6L6.5 8.5H12Z" fill="white" />
+=======
+                    <path d="M1.5 2L3 22L12 24L21 22L22.5 2H1.5Z" fill="#E34F26"/>
+                    <path d="M12 4H20.5L19.5 20L12 22V4Z" fill="#EF652A"/>
+                    <path d="M12 8.5H16.5L16 13.5L12 14.5V17.5L17 16L18 8.5H12Z" fill="white"/>
+                    <path d="M12 8.5V6H6L6.5 8.5H12Z" fill="white"/>
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
                 </svg>
             </div>
             <div class="tech-icon tech-icon-css">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <!-- CSS3 Logo -->
+<<<<<<< HEAD
                     <path d="M1.5 2L3 22L12 24L21 22L22.5 2H1.5Z" fill="#1572B6" />
                     <path d="M12 4H20.5L19.5 20L12 22V4Z" fill="#33A9DC" />
                     <path d="M12 8.5H16.5L16 13.5L12 14.5V17.5L17 16L18 8.5H12Z" fill="white" />
                     <path d="M12 8.5V6H6L6.5 8.5H12Z" fill="white" />
+=======
+                    <path d="M1.5 2L3 22L12 24L21 22L22.5 2H1.5Z" fill="#1572B6"/>
+                    <path d="M12 4H20.5L19.5 20L12 22V4Z" fill="#33A9DC"/>
+                    <path d="M12 8.5H16.5L16 13.5L12 14.5V17.5L17 16L18 8.5H12Z" fill="white"/>
+                    <path d="M12 8.5V6H6L6.5 8.5H12Z" fill="white"/>
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
                 </svg>
             </div>
             <div class="tech-icon tech-icon-java">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <!-- Java Logo -->
+<<<<<<< HEAD
                     <path
                         d="M8.5 17.5C8.5 17.5 7.5 18.5 9.5 18.8C11.8 19.2 13 19 15.5 18.5C15.5 18.5 16.2 19.1 17.5 19.5C11 22 4 19.5 8.5 17.5Z"
                         fill="#ED8B00" />
@@ -896,26 +1236,43 @@
                     <path
                         d="M13.5 12C16 12.5 18.5 10.5 18.5 8.5C18.5 5.5 15 4 12 4C9 4 6.5 6 6.5 8.5C6.5 11 9 12 11.5 12H13.5Z"
                         fill="#5382A1" />
+=======
+                    <path d="M8.5 17.5C8.5 17.5 7.5 18.5 9.5 18.8C11.8 19.2 13 19 15.5 18.5C15.5 18.5 16.2 19.1 17.5 19.5C11 22 4 19.5 8.5 17.5Z" fill="#ED8B00"/>
+                    <path d="M8 15.5C8 15.5 7 16.5 9 16.8C11.5 17.2 13.5 17.1 16.5 16.2C16.5 16.2 17 16.7 18 17C10.8 19.5 3.5 17.2 8 15.5Z" fill="#ED8B00"/>
+                    <path d="M13.5 12C16 12.5 18.5 10.5 18.5 8.5C18.5 5.5 15 4 12 4C9 4 6.5 6 6.5 8.5C6.5 11 9 12 11.5 12H13.5Z" fill="#5382A1"/>
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
                 </svg>
             </div>
             <div class="tech-icon tech-icon-vercel">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <!-- Vercel Logo -->
+<<<<<<< HEAD
                     <path d="M12 1L24 21H0L12 1Z" fill="#000000" />
+=======
+                    <path d="M12 1L24 21H0L12 1Z" fill="#000000"/>
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
                 </svg>
             </div>
             <div class="tech-icon tech-icon-git">
                 <i data-feather="git-branch" style="color: #F05032;"></i>
             </div>
         </div>
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
         <div class="experience-container">
             <h2 class="portfolio-title">
                 My Development<br>
                 Journey so far
                 <span class="experience-badge">Experience</span>
             </h2>
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
             <div class="experience-list">
                 <!-- Experience items will be added here -->
                 <div class="experience-item">
@@ -924,6 +1281,7 @@
                         <h3 class="experience-title">Frontend Developer</h3>
                         <h4 class="experience-company">krify</h4>
                         <p class="experience-description">
+<<<<<<< HEAD
                             Frontend Developer in a MERN Stack Project – Built reusable UI components for an LMS
                             platform. Led development, delivered in 3 months; now used by 20,000+ students. </p>
                         <div class="experience-tech">React.js • JavaScript • CSS3 • Tailwind CSS • Git • GitHub • Node
@@ -931,10 +1289,18 @@
                     </div>
                 </div>
 
+=======
+Frontend Developer in a MERN Stack Project – Built reusable UI components for an LMS platform. Led development, delivered in 3 months; now used by 20,000+ students.                        </p>
+                        <div class="experience-tech">React.js • JavaScript • CSS3 • Tailwind CSS • Git • GitHub • Node js  </div>
+                    </div>
+                </div>
+                
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
                 <div class="experience-item">
                     <div class="experience-duration">Sep 24 - Nov 24</div>
                     <div class="experience-content">
                         <h3 class="experience-title">Junior UI Designer & Developer</h3>
+<<<<<<< HEAD
                         <h4 class="experience-company">TechSavvy (Virtual Internship)</h4>
                         <p class="experience-description">
                             Created responsive web interfaces using Figma, HTML5, CSS3, JavaScript, and React.js.
@@ -943,6 +1309,13 @@
                         </p>
                         <div class="experience-tech">CSS • Figma • PhotoShop • React • JavaScript • Bootstrap • Git
                         </div>
+=======
+                        <h4 class="experience-company">TechSavvy  (Virtual Internship)</h4>
+                        <p class="experience-description">
+                            Created responsive web interfaces using Figma, HTML5, CSS3, JavaScript, and React.js. Converted design mockups into interactive components and optimized UI for better user engagement
+                        </p>
+                        <div class="experience-tech">CSS • Figma • PhotoShop • React • JavaScript • Bootstrap • Git</div>
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
                     </div>
                 </div>
             </div>
@@ -951,6 +1324,7 @@
 
     <!-- Personal Life Section -->
     <section class="personal-life-section" id="personal-life">
+<<<<<<< HEAD
         <!-- Banner Content with SVGs next to text -->
         <div class="banner-content banner-content-flex">
             <div class="banner-svg">
@@ -1103,15 +1477,48 @@
 
 
 
+=======
+            <!-- Banner Content with SVGs next to text -->
+            <div class="banner-content banner-content-flex">
+                <div class="banner-svg">
+                    <svg width="60" height="60" viewBox="0 0 200 300" fill="none" xmlns="http://www.w3.org/2000/svg"> <g clip-path="url(#clip0_119_236)"> <path d="M100.019 138.694C14.5644 254.761 -54.7168 185.48 61.3282 99.9966C-54.77 14.5263 14.5112 -54.7279 100.019 61.3122C185.473 -54.7678 254.754 14.5263 138.709 99.9966C254.701 185.48 185.42 254.761 100.019 138.694Z" fill="url(#paint0_linear_119_236)"/> </g> <defs> <linearGradient id="paint0_linear_119_236" x1="27.5" y1="19" x2="149" y2="174.5" gradientUnits="userSpaceOnUse"> <stop stop-color="#FFD9A0"/> <stop offset="1" stop-color="#FFF5F1"/> </linearGradient> <clipPath id="clip0_119_236"> <rect width="200" height="200" fill="white"/> </clipPath> </defs> </svg>
+                </div>
+                <div class="banner-text">
+                    <h1 class="banner-title" style="text-align:center;">Life outside</h1>
+                    <h2 class="banner-subtitle" style="text-align:center;">Pixels & Padding</h2>
+                </div>
+                <div class="banner-svgs">
+                    <svg width="60" height="60" viewBox="0 0 200 280" fill="none" xmlns="http://www.w3.org/2000/svg"> <g clip-path="url(#clip0_236_1056)"> <path fill-rule="evenodd" clip-rule="evenodd" d="M100 0C72.3858 0 50 22.3858 50 50C22.3858 50 2.18557e-06 72.3858 0 100C0 127.614 22.3858 150 50 150C50 177.614 72.3858 200 100 200C127.614 200 150 177.614 150 150C177.614 150 200 127.614 200 100C200 72.3858 177.614 50 150 50C150 22.3858 127.614 0 100 0ZM140.306 59.6939C140.306 37.4334 122.26 19.3878 100 19.3878C77.7395 19.3878 59.6939 37.4334 59.6939 59.6939C37.4334 59.6939 19.3878 77.7395 19.3878 100C19.3878 122.26 37.4334 140.306 59.6939 140.306C59.6939 162.567 77.7395 180.612 100 180.612C122.26 180.612 140.306 162.567 140.306 140.306C162.567 140.306 180.612 122.26 180.612 100C180.612 77.7395 162.567 59.6939 140.306 59.6939ZM69.3878 69.3878C69.3878 52.4811 83.0933 38.7755 100 38.7755C116.907 38.7755 130.612 52.4811 130.612 69.3878C147.519 69.3878 161.224 83.0933 161.224 100C161.224 116.907 147.519 130.612 130.612 130.612C130.612 147.519 116.907 161.224 100 161.224C83.0933 161.224 69.3878 147.519 69.3878 130.612C52.4811 130.612 38.7755 116.907 38.7755 100C38.7755 83.0933 52.4811 69.3877 69.3878 69.3878Z" fill="url(#paint0_linear_236_1056)"/> </g> <defs> <linearGradient id="paint0_linear_236_1056" x1="14" y1="26" x2="179" y2="179.5" gradientUnits="userSpaceOnUse"> <stop stop-color="#E9B8FF"/> <stop offset="1" stop-color="#F9ECFF"/> </linearGradient> <clipPath id="clip0_236_1056"> <rect width="200" height="200" fill="white"/> </clipPath> </defs> </svg>
+                </div>
+            </div>
+            <div class="personal-section-image-container">
+                <div class="psimage1"></div>
+                <div class="psimage2"></div>
+                <div class="psimage3"></div>
+                <div class="psimage4"></div>
+                <div class="psimage5"></div>
+                <div class="psimage6"></div>
+            </div>
+    </section>
+
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
     <!-- Load critical scripts early but don't block -->
     <script>
         // Early performance optimizations
         const perfStart = performance.now();
+<<<<<<< HEAD
 
         // Performance monitoring
         let lcpTime = 0;
         let inpTime = 0;
 
+=======
+        
+        // Performance monitoring
+        let lcpTime = 0;
+        let inpTime = 0;
+        
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
         // Monitor LCP
         const lcpObserver = new PerformanceObserver((entryList) => {
             const entries = entryList.getEntries();
@@ -1119,13 +1526,21 @@
             lcpTime = lastEntry.startTime;
             console.log('LCP:', lcpTime);
         });
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
         try {
             lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] });
         } catch (e) {
             console.warn('LCP observer not supported');
         }
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
         // Monitor INP (using event timing as proxy)
         const inpObserver = new PerformanceObserver((entryList) => {
             const entries = entryList.getEntries();
@@ -1136,29 +1551,49 @@
                 }
             });
         });
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
         try {
             inpObserver.observe({ entryTypes: ['event'] });
         } catch (e) {
             console.warn('Event timing observer not supported');
         }
+<<<<<<< HEAD
 
         // Debounced scroll handler for better INP
         let scrollTimeout;
         const debouncedScrollHandler = (handler) => {
             return function () {
+=======
+        
+        // Debounced scroll handler for better INP
+        let scrollTimeout;
+        const debouncedScrollHandler = (handler) => {
+            return function() {
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
                 if (scrollTimeout) {
                     cancelAnimationFrame(scrollTimeout);
                 }
                 scrollTimeout = requestAnimationFrame(handler);
             };
         };
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
         // Early profile image setup to improve LCP
         function initProfileElements() {
             const desktopProfile = document.getElementById('desktop-profile');
             const mobileProfile = document.getElementById('mobile-profile');
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
             if (desktopProfile) {
                 desktopProfile.textContent = 'SP';
                 desktopProfile.style.willChange = 'transform';
@@ -1168,13 +1603,21 @@
                 mobileProfile.style.willChange = 'transform';
             }
         }
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
         // Initialize Cycling Notification Animations
         let currentAnimationIndex = 0;
         let lottieAnimation = null;
         let animationLoadRetries = 0;
         const maxRetries = 3;
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
         // Array of notification animation files to cycle through
         const animationFiles = [
             'Notification-[remix].json',
@@ -1284,11 +1727,16 @@
                 lottieAnimation = lottie.loadAnimation(loadOptions);
 
                 // Enhanced event handling
+<<<<<<< HEAD
                 lottieAnimation.addEventListener('DOMLoaded', function () {
+=======
+                lottieAnimation.addEventListener('DOMLoaded', function() {
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
                     console.log(`🎉 Notification animation ${currentAnimationIndex + 1} DOM loaded successfully`);
                     animationLoadRetries = 0; // Reset retry counter on success
                 });
 
+<<<<<<< HEAD
                 lottieAnimation.addEventListener('data_ready', function () {
                     console.log(`📁 Notification animation ${currentAnimationIndex + 1} data ready`);
                 });
@@ -1296,6 +1744,15 @@
                 lottieAnimation.addEventListener('complete', function () {
                     console.log(`✅ Notification animation ${currentAnimationIndex + 1} completed`);
 
+=======
+                lottieAnimation.addEventListener('data_ready', function() {
+                    console.log(`📁 Notification animation ${currentAnimationIndex + 1} data ready`);
+                });
+
+                lottieAnimation.addEventListener('complete', function() {
+                    console.log(`✅ Notification animation ${currentAnimationIndex + 1} completed`);
+                    
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
                     // Move to next animation after a brief pause
                     setTimeout(() => {
                         currentAnimationIndex = (currentAnimationIndex + 1) % animationFiles.length;
@@ -1303,12 +1760,20 @@
                     }, 1000); // 1 second pause between animations
                 });
 
+<<<<<<< HEAD
                 lottieAnimation.addEventListener('error', function (error) {
+=======
+                lottieAnimation.addEventListener('error', function(error) {
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
                     console.error(`❌ Lottie animation error for ${filePath}:`, error);
                     handleAnimationError();
                 });
 
+<<<<<<< HEAD
                 lottieAnimation.addEventListener('data_failed', function (error) {
+=======
+                lottieAnimation.addEventListener('data_failed', function(error) {
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
                     console.error(`❌ Failed to load animation data for ${filePath}:`, error);
                     handleAnimationError();
                 });
@@ -1332,7 +1797,11 @@
 
         function handleAnimationError() {
             animationLoadRetries++;
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
             if (animationLoadRetries < maxRetries) {
                 console.log(`🔄 Retrying animation load (attempt ${animationLoadRetries + 1}/${maxRetries})`);
                 setTimeout(() => {
@@ -1353,7 +1822,11 @@
             if (!container) return;
 
             console.log('📦 Loading backup animation: Message 1.json');
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
             try {
                 if (lottieAnimation) {
                     lottieAnimation.destroy();
@@ -1376,11 +1849,19 @@
                     }
                 });
 
+<<<<<<< HEAD
                 lottieAnimation.addEventListener('DOMLoaded', function () {
                     console.log('✅ Backup animation loaded successfully');
                 });
 
                 lottieAnimation.addEventListener('error', function () {
+=======
+                lottieAnimation.addEventListener('DOMLoaded', function() {
+                    console.log('✅ Backup animation loaded successfully');
+                });
+
+                lottieAnimation.addEventListener('error', function() {
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
                     console.error('❌ Backup animation also failed');
                     showNotificationFallback(container);
                 });
@@ -1439,21 +1920,33 @@
                     }
                 </style>
             `;
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
             // Try to continue the cycle after showing fallback
             setTimeout(() => {
                 currentAnimationIndex = (currentAnimationIndex + 1) % animationFiles.length;
                 loadNextAnimation();
             }, 3000);
         }
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
         // Initialize as soon as DOM is ready
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', initProfileElements);
         } else {
             initProfileElements();
         }
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
         // Report performance metrics after page load
         window.addEventListener('load', () => {
             setTimeout(() => {
@@ -1461,7 +1954,11 @@
                 console.log('- Page Load Time:', performance.now() - perfStart, 'ms');
                 console.log('- LCP Time:', lcpTime, 'ms');
                 console.log('- Max INP Duration:', inpTime, 'ms');
+<<<<<<< HEAD
 
+=======
+                
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
                 // Check if we're meeting targets
                 if (lcpTime > 2500) {
                     console.warn('⚠️ LCP exceeds 2.5s target');
@@ -1470,16 +1967,27 @@
                     console.warn('⚠️ INP exceeds 200ms target');
                 }
             }, 1000);
+<<<<<<< HEAD
 
             // Initialize auto-scroll for skills list
             initSkillsAutoScroll();
 
+=======
+            
+            // Initialize auto-scroll for skills list
+            initSkillsAutoScroll();
+            
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
             // Initialize cycling notification animations with delay to ensure DOM is ready
             setTimeout(() => {
                 console.log('🎬 Starting cycling notification animations...');
                 initCyclingAnimations();
             }, 1500);
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
             // Add debug controls to window for testing
             window.debugNotifications = {
                 restart: () => {
@@ -1536,14 +2044,22 @@
                     }
                 }
             };
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
             console.log('🛠️ Debug commands available:');
             console.log('  - window.debugNotifications.restart()');
             console.log('  - window.debugNotifications.testJSON()');
             console.log('  - window.debugNotifications.loadBackup()');
             console.log('  - window.debugNotifications.info()');;
         });
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
         // Auto-scroll animation for skills list
         function initSkillsAutoScroll() {
             const skillsList = document.querySelector('.skills-list');
@@ -1552,23 +2068,39 @@
             const devSkillsCell = document.querySelector('.skills-development-cell');
             const designSkillsList = document.querySelector('.design-skills-list');
             const designSkillsCell = document.querySelector('.skills-design-cell');
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
             // Initialize software skills auto-scroll
             if (skillsList && skillsCell) {
                 initCellAutoScroll(skillsList, skillsCell, 'software');
             }
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
             // Initialize development skills auto-scroll
             if (devSkillsList && devSkillsCell) {
                 initCellAutoScroll(devSkillsList, devSkillsCell, 'development');
             }
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
             // Initialize design skills auto-scroll
             if (designSkillsList && designSkillsCell) {
                 initCellAutoScroll(designSkillsList, designSkillsCell, 'design');
             }
         }
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
         function initCellAutoScroll(skillsList, skillsCell, cellType) {
             let scrollDirection = 1; // 1 for down, -1 for up
             let currentPosition = 0;
@@ -1576,7 +2108,11 @@
             let isHovering = false;
             let userScrollTimeout;
             let hoverScrollInterval;
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
             // Pause auto-scroll when user interacts
             skillsList.addEventListener('wheel', () => {
                 isUserScrolling = true;
@@ -1585,7 +2121,11 @@
                     isUserScrolling = false;
                 }, 3000); // Resume after 3 seconds
             });
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
             skillsList.addEventListener('touchstart', () => {
                 isUserScrolling = true;
                 clearTimeout(userScrollTimeout);
@@ -1593,17 +2133,26 @@
                     isUserScrolling = false;
                 }, 3000);
             });
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
             // Enhanced hover functionality
             skillsCell.addEventListener('mouseenter', () => {
                 isHovering = true;
                 startHoverScroll();
             });
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
             skillsCell.addEventListener('mouseleave', () => {
                 isHovering = false;
                 stopHoverScroll();
             });
+<<<<<<< HEAD
 
             function startHoverScroll() {
                 if (hoverScrollInterval) clearInterval(hoverScrollInterval);
@@ -1620,6 +2169,24 @@
 
                     hoverPosition += hoverDirection * 1.5; // Smooth scroll speed
 
+=======
+            
+            function startHoverScroll() {
+                if (hoverScrollInterval) clearInterval(hoverScrollInterval);
+                
+                let hoverDirection = 1;
+                let hoverPosition = skillsList.scrollTop;
+                const maxScroll = skillsList.scrollHeight - skillsList.clientHeight;
+                
+                hoverScrollInterval = setInterval(() => {
+                    if (!isHovering || isUserScrolling) return;
+                    
+                    // Smooth easing function
+                    const easeInOut = (t) => t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+                    
+                    hoverPosition += hoverDirection * 1.5; // Smooth scroll speed
+                    
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
                     // Change direction at boundaries with easing
                     if (hoverPosition >= maxScroll) {
                         hoverDirection = -1;
@@ -1628,36 +2195,60 @@
                         hoverDirection = 1;
                         hoverPosition = 0;
                     }
+<<<<<<< HEAD
 
+=======
+                    
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
                     skillsList.scrollTo({
                         top: hoverPosition,
                         behavior: 'smooth'
                     });
                 }, 50); // Smooth 20fps
             }
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
             function stopHoverScroll() {
                 if (hoverScrollInterval) {
                     clearInterval(hoverScrollInterval);
                     hoverScrollInterval = null;
                 }
             }
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
             function autoScroll() {
                 if (isUserScrolling || isHovering) {
                     requestAnimationFrame(autoScroll);
                     return;
                 }
+<<<<<<< HEAD
 
                 const maxScroll = skillsList.scrollHeight - skillsList.clientHeight;
 
+=======
+                
+                const maxScroll = skillsList.scrollHeight - skillsList.clientHeight;
+                
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
                 if (maxScroll <= 0) {
                     requestAnimationFrame(autoScroll);
                     return;
                 }
+<<<<<<< HEAD
 
                 currentPosition += scrollDirection * 0.5; // Slow, smooth scroll
 
+=======
+                
+                currentPosition += scrollDirection * 0.5; // Slow, smooth scroll
+                
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
                 // Change direction at boundaries
                 if (currentPosition >= maxScroll) {
                     // Pause at bottom then restart from top
@@ -1669,21 +2260,34 @@
                     }, 1500);
                     currentPosition = maxScroll;
                 }
+<<<<<<< HEAD
 
+=======
+                
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
                 if (currentPosition <= 0) {
                     currentPosition = 0;
                     scrollDirection = 1;
                 }
+<<<<<<< HEAD
 
                 skillsList.scrollTop = currentPosition;
                 requestAnimationFrame(autoScroll);
             }
 
+=======
+                
+                skillsList.scrollTop = currentPosition;
+                requestAnimationFrame(autoScroll);
+            }
+            
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
             // Start auto-scroll after a brief delay
             setTimeout(() => {
                 autoScroll();
             }, 2000 + (cellType === 'development' ? 500 : cellType === 'design' ? 1000 : 0)); // Stagger start times
         }
+<<<<<<< HEAD
 
         // Initialize Keyboard Component
         function initKeyboard() {
@@ -1692,11 +2296,22 @@
             keyboardKeys.forEach(key => {
                 // Add click animation
                 key.addEventListener('click', function () {
+=======
+        
+        // Initialize Keyboard Component
+        function initKeyboard() {
+            const keyboardKeys = document.querySelectorAll('.keyboard__key');
+            
+            keyboardKeys.forEach(key => {
+                // Add click animation
+                key.addEventListener('click', function() {
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
                     this.classList.add('active');
                     setTimeout(() => {
                         this.classList.remove('active');
                     }, 150);
                 });
+<<<<<<< HEAD
 
                 // Add keyboard event listeners
                 const keyData = key.getAttribute('data-key');
@@ -1704,32 +2319,57 @@
                     document.addEventListener('keydown', function (e) {
                         let keyPressed = '';
 
+=======
+                
+                // Add keyboard event listeners
+                const keyData = key.getAttribute('data-key');
+                if (keyData) {
+                    document.addEventListener('keydown', function(e) {
+                        let keyPressed = '';
+                        
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
                         if (e.key === 'Meta' || e.key === 'Cmd') {
                             keyPressed = 'cmd';
                         } else {
                             keyPressed = e.key.toLowerCase();
                         }
+<<<<<<< HEAD
 
+=======
+                        
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
                         if (keyPressed === keyData) {
                             key.classList.add('active');
                         }
                     });
+<<<<<<< HEAD
 
                     document.addEventListener('keyup', function (e) {
                         let keyPressed = '';
 
+=======
+                    
+                    document.addEventListener('keyup', function(e) {
+                        let keyPressed = '';
+                        
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
                         if (e.key === 'Meta' || e.key === 'Cmd') {
                             keyPressed = 'cmd';
                         } else {
                             keyPressed = e.key.toLowerCase();
                         }
+<<<<<<< HEAD
 
+=======
+                        
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
                         if (keyPressed === keyData) {
                             key.classList.remove('active');
                         }
                     });
                 }
             });
+<<<<<<< HEAD
 
             // Special combination detection (Cmd+C, Cmd+V)
             let cmdPressed = false;
@@ -1739,35 +2379,66 @@
                     cmdPressed = true;
                 }
 
+=======
+            
+            // Special combination detection (Cmd+C, Cmd+V)
+            let cmdPressed = false;
+            
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Meta' || e.key === 'Cmd') {
+                    cmdPressed = true;
+                }
+                
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
                 // Cmd+C combination
                 if (cmdPressed && e.key.toLowerCase() === 'c') {
                     console.log('🔄 Copy command detected!');
                     // Add visual feedback
                     const cmdKey = document.querySelector('[data-key="cmd"]');
                     const cKey = document.querySelector('[data-key="c"]');
+<<<<<<< HEAD
 
                     if (cmdKey && cKey) {
                         cmdKey.style.background = '#4CAF50';
                         cKey.style.background = '#4CAF50';
 
+=======
+                    
+                    if (cmdKey && cKey) {
+                        cmdKey.style.background = '#4CAF50';
+                        cKey.style.background = '#4CAF50';
+                        
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
                         setTimeout(() => {
                             cmdKey.style.background = '';
                             cKey.style.background = '';
                         }, 300);
                     }
                 }
+<<<<<<< HEAD
 
+=======
+                
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
                 // Cmd+V combination
                 if (cmdPressed && e.key.toLowerCase() === 'v') {
                     console.log('📋 Paste command detected!');
                     // Add visual feedback
                     const cmdKey = document.querySelector('[data-key="cmd"]');
                     const vKey = document.querySelector('[data-key="v"]');
+<<<<<<< HEAD
 
                     if (cmdKey && vKey) {
                         cmdKey.style.background = '#2196F3';
                         vKey.style.background = '#2196F3';
 
+=======
+                    
+                    if (cmdKey && vKey) {
+                        cmdKey.style.background = '#2196F3';
+                        vKey.style.background = '#2196F3';
+                        
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
                         setTimeout(() => {
                             cmdKey.style.background = '';
                             vKey.style.background = '';
@@ -1775,26 +2446,46 @@
                     }
                 }
             });
+<<<<<<< HEAD
 
             document.addEventListener('keyup', function (e) {
+=======
+            
+            document.addEventListener('keyup', function(e) {
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
                 if (e.key === 'Meta' || e.key === 'Cmd') {
                     cmdPressed = false;
                 }
             });
         }
+<<<<<<< HEAD
 
         // Initialize keyboard when DOM is ready
         document.addEventListener('DOMContentLoaded', function () {
             setTimeout(initKeyboard, 1000);
         });
 
+=======
+        
+        // Initialize keyboard when DOM is ready
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(initKeyboard, 1000);
+        });
+        
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
         // Initialize Water Wave Animation
         function initWaterWaveAnimation() {
             const canvas = document.getElementById('waterCanvas');
             if (!canvas) return;
+<<<<<<< HEAD
 
             const ctx = canvas.getContext('2d');
 
+=======
+            
+            const ctx = canvas.getContext('2d');
+            
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
             // Set canvas size to fit the cell
             const cellRect = canvas.parentElement.getBoundingClientRect();
             canvas.width = cellRect.width;
@@ -1845,6 +2536,7 @@
 
             window.addEventListener('resize', handleResize);
         }
+<<<<<<< HEAD
 
         // Initialize water wave animation when DOM is ready
         window.addEventListener('load', function () {
@@ -1860,6 +2552,23 @@
         // Character Animation System
         function initCharacterAnimation() {
             var RandomCharacterAnimation = function (options) {
+=======
+        
+        // Initialize water wave animation when DOM is ready
+        window.addEventListener('load', function() {
+            setTimeout(initWaterWaveAnimation, 500);
+            
+            // Initialize character animation
+            setTimeout(initCharacterAnimation, 1000);
+            
+            // Initialize coding terminal typing animation
+            setTimeout(initCodingTerminal, 1500);
+        });
+        
+        // Character Animation System
+        function initCharacterAnimation() {
+            var RandomCharacterAnimation = function(options) {
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
                 var defaults = {
                     d_element: '',
                     d_type: 'char',
@@ -1893,11 +2602,19 @@
             }
 
             RandomCharacterAnimation.prototype = {
+<<<<<<< HEAD
                 _random: function (minNb, maxNb) {
                     return Math.floor(Math.random() * (maxNb - minNb) + minNb);
                 },
 
                 _getElementSize: function () {
+=======
+                _random: function(minNb, maxNb) {
+                    return Math.floor(Math.random() * (maxNb - minNb) + minNb);
+                },
+
+                _getElementSize: function() {
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
                     var i, thisLetter;
                     var element_selected = document.querySelector(this.options.d_element).textContent;
 
@@ -1908,7 +2625,11 @@
                     return this.getLettersArray;
                 },
 
+<<<<<<< HEAD
                 _setStructure: function () {
+=======
+                _setStructure: function() {
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
                     var element = document.querySelector(this.options.d_element);
                     element.innerHTML = '';
 
@@ -1931,7 +2652,11 @@
                     }
                 },
 
+<<<<<<< HEAD
                 _setKerning: function () {
+=======
+                _setKerning: function() {
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
                     var kerning = this.options.d_kerning;
                     var elem = document.querySelector(this.options.d_element);
 
@@ -1947,7 +2672,11 @@
                     }
                 },
 
+<<<<<<< HEAD
                 _convertStringToArray: function (charType) {
+=======
+                _convertStringToArray: function(charType) {
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
                     var i, thisChar;
                     for (i = 0; i < this.char.length; i++) {
                         thisChar = this.char[i];
@@ -1955,7 +2684,11 @@
                     }
                 },
 
+<<<<<<< HEAD
                 _setChange: function () {
+=======
+                _setChange: function() {
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
                     var i, setChange;
 
                     for (i in this.getLettersArray) {
@@ -1964,7 +2697,11 @@
                     }
                 },
 
+<<<<<<< HEAD
                 _generateRandomCharacter: function () {
+=======
+                _generateRandomCharacter: function() {
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
                     var charType = this.options.d_type;
                     var elem = document.querySelector(this.options.d_element);
 
@@ -1989,7 +2726,11 @@
                     elem.style.opacity = '1'
                 },
 
+<<<<<<< HEAD
                 _checkNbChanges: function () {
+=======
+                _checkNbChanges: function() {
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
                     var i, j, k, thisChar, setContent, thisContainer;
                     var elem = document.querySelector(this.options.d_element);
 
@@ -2005,10 +2746,17 @@
                     }
                 },
 
+<<<<<<< HEAD
                 _loop: function () {
                     var self = this;
 
                     this.requestId = requestAnimationFrame(function () {
+=======
+                _loop: function() {
+                    var self = this;
+
+                    this.requestId = requestAnimationFrame(function() {
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
                         self._loop();
 
                         if (self.currentChange > self.options.d_max) {
@@ -2020,13 +2768,21 @@
                     self._checkNbChanges();
                 },
 
+<<<<<<< HEAD
                 restart: function () {
+=======
+                restart: function() {
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
                     this.currentChange = 0;
                     this._setChange();
                     this._loop();
                 },
 
+<<<<<<< HEAD
                 start: function () {
+=======
+                start: function() {
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
                     this._getElementSize();
                     this._setStructure();
                     this._setKerning();
@@ -2036,7 +2792,11 @@
                     this._loop();
                 },
 
+<<<<<<< HEAD
                 stop: function () {
+=======
+                stop: function() {
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
                     window.cancelAnimationFrame(this.requestId);
                 }
             };
@@ -2048,6 +2808,7 @@
             });
 
             title.start();
+<<<<<<< HEAD
 
             // Restart animation every 4 seconds
             setInterval(function () {
@@ -2055,11 +2816,24 @@
             }, 4000);
         }
 
+=======
+            
+            // Restart animation every 4 seconds
+            setInterval(function() {
+                title.restart();
+            }, 4000);
+        }
+        
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
         // Coding Terminal Typing Animation
         function initCodingTerminal() {
             const typingElement = document.getElementById('typing-code');
             if (!typingElement) return;
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
             const codeSnippets = [
                 'npm install portfolio',
                 'git commit -m "Added skills"',
@@ -2072,6 +2846,7 @@
                 'docker build -t app .',
                 'yarn start'
             ];
+<<<<<<< HEAD
 
             let currentSnippetIndex = 0;
             let currentCharIndex = 0;
@@ -2080,6 +2855,16 @@
             function typeWriter() {
                 const currentSnippet = codeSnippets[currentSnippetIndex];
 
+=======
+            
+            let currentSnippetIndex = 0;
+            let currentCharIndex = 0;
+            let isDeleting = false;
+            
+            function typeWriter() {
+                const currentSnippet = codeSnippets[currentSnippetIndex];
+                
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
                 if (isDeleting) {
                     typingElement.textContent = currentSnippet.substring(0, currentCharIndex - 1);
                     currentCharIndex--;
@@ -2087,9 +2872,15 @@
                     typingElement.textContent = currentSnippet.substring(0, currentCharIndex + 1);
                     currentCharIndex++;
                 }
+<<<<<<< HEAD
 
                 let typeSpeed = isDeleting ? 50 : 100;
 
+=======
+                
+                let typeSpeed = isDeleting ? 50 : 100;
+                
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
                 if (!isDeleting && currentCharIndex === currentSnippet.length) {
                     typeSpeed = 2000; // Pause at end
                     isDeleting = true;
@@ -2098,10 +2889,17 @@
                     currentSnippetIndex = (currentSnippetIndex + 1) % codeSnippets.length;
                     typeSpeed = 500; // Pause before starting new snippet
                 }
+<<<<<<< HEAD
 
                 setTimeout(typeWriter, typeSpeed);
             }
 
+=======
+                
+                setTimeout(typeWriter, typeSpeed);
+            }
+            
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
             typeWriter();
         }
     </script>
@@ -2112,5 +2910,8 @@
     <script src="https://unpkg.com/css-doodle@0.34.6/css-doodle.min.js" defer></script>
     <script src="script.js" defer></script>
 </body>
+<<<<<<< HEAD
 
+=======
+>>>>>>> d35a3ddb441a13b0681c9c69de50e40a4dbaed7d
 </html>
